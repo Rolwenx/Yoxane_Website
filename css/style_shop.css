@@ -1,0 +1,207 @@
+#menu_accueil {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+#menu_accueil li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size:20px;
+}
+
+/* Change the link color to #111 (black) on hover */
+#menu_accueil li a:hover {
+    background-color: #111;
+    
+}
+
+#menu_accueil img {
+    filter: brightness(64%);
+}
+
+.site-title { /*pour cibler que le titre*/
+    margin-right: auto;
+}
+
+body {
+    background-color:#5F9EA0
+}
+
+/* Style for the quote on the homepage */
+.Quote_home {
+    position: absolute; /* Position the element relative to its containing block */
+    top: 50%; /* Position the element 50% from the top of its containing block */
+    left: 50%; /* Position the element 50% from the left of its containing block */
+    transform: translate(-50%, -50%); /* Move the element up and left by half its own width and height to center it */
+    text-align: center; /* Center-align the text */
+    color:white; /* Set the text color to white */
+    font-size:350%; /* Set the font size to 350% of the parent element's font size */
+    text-shadow: 0px 0px 10px #515151; /* Add a shadow effect to the text */
+   }
+   
+   /* Style for the menu choice image */
+   #menu_choice_img {
+    list-style-type: none; /* Remove the default list style */
+    margin: 0; /* Remove the default margin */
+    padding-top: 20px; /* Add 20px of padding to the top of the element */
+    padding-bottom: 20px; /* Add 20px of padding to the bottom of the element */
+    overflow: hidden; /* Hide any overflowing content */
+    background-color: none; /* Set the background color to transparent */
+    display: flex; /* Display the element as a flex container */
+    justify-content: flex-start; /* Align the flex items to the start of the main axis (left) */
+}
+   
+   /* Style for the menu choice image list items */
+   #menu_choice_img li{
+    display: block; /* Display the list items as block elements */
+    color: white; /* Set the text color to white */
+    text-align: center; /* Center-align the text */
+    padding: 20px 20px; /* Add 20px of padding to all sides of the element */
+    text-decoration: none; /* Remove any text decoration (e.g. underlines) */
+    font-size:20px; /* Set the font size to 20px */
+   }
+   
+   
+   /* Change the link color to #111 (black) on hover */
+ #menu_choice_img li:hover {
+    color: #ffd700; 
+}
+
+#panier { /*pour cibler que le panier*/
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+.cart{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:360px;
+    min-height:100vh;
+    background-color: #5F9EA0;
+    box-shadow:  -2px 0 4px hsl(0 4% 15%/10%);
+    z-index: 1;
+    transition:0.3s
+
+}
+
+.cart.active{
+    right: 0;
+
+}
+
+.cart-box{
+    display:grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 10px;
+    margin-top:10px;
+
+}
+.cart-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 1050px;
+}
+
+
+.cart-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.detail-box{
+    display: grid;
+    row-gap: 5px ;
+}
+
+.cart-title{
+    text-align: center;
+    font-size:1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.cart-product-title{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.remove{
+    cursor: pointer;
+}
+
+#quit_cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+
+.container { /*tableau contenant les images de présentation*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,400px));
+    justify-content: center;
+    z-index: -1;
+
+}
+  
+.image-container {
+    display: flex;
+    transition: all .40s;
+    flex-direction: column;
+    position: relative;
+    justify-content: center; /* center the content vertically */
+    align-items: center;
+    padding: 25px;
+
+}
+
+
+.image-container img {
+    width: 300px;
+    height: 300px; /* set a fixed height for the images */
+    object-fit: cover;
+
+}
+
+ 
+.image-container h2 {
+    padding-top: 10px;
+}
+
+.image-container:hover {
+    border: 1px solid white; /* add a black border on hover */
+    transform: scale(1.1); /* make the element grow in size on hover */
+}
+
+.add-cart{
+    position:absolute;
+    bottom :0;
+    right: 0;
+    background-color: white;
+    padding:10px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.image-container:hover .add-cart{
+    opacity: 1;
+}
+
+
+

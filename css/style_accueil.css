@@ -1,0 +1,124 @@
+#menu_accueil {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+#menu_accueil li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size:20px;
+}
+
+/* Change the link color to #111 (black) on hover */
+#menu_accueil li a:hover {
+    background-color: #111;
+    
+}
+
+h1{
+    text-align: center;
+}
+
+
+.site-title { /*pour cibler que le titre*/
+    margin-right: auto;
+}
+
+  
+.Quote_home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white;
+    font-size:350%;
+    text-shadow: 0px 0px 10px #515151;
+    
+}
+
+body {
+    background-color:#5F9EA0
+}
+  
+
+.container { /*tableau contenant les images de présentation*/
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
+
+  }
+  
+.image-container {  
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 30px;
+    
+}
+  
+.image-container img {  /*propriétées de l'image de présentation*/
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+  
+.overlay { /*position et opacité de la classe qui contient le texte des images*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity:0;
+    transition: opacity 0.3s ease; 
+}
+  
+.text {
+    color: white;
+    font-size: 40px; /*change la taille du texte dans les image prez*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.image-container:hover .overlay {
+     opacity:1;
+}
+  
+.image-container:hover img {
+    transform: scale(1.2);
+    filter: brightness(54%);
+    
+}
+
+.bouton_buy{
+    padding-top:50px;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.bouton_buy button {
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+.bouton_buy button:active {
+    filter: brightness(-54%);
+
+}
+
+  
