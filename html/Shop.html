@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Yoxane - Accueil"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
+    <link rel= "stylesheet" href="C:\Users\Roxane\VS\projet-web\css\style_shop.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2/css/boxicons.min.css" rel="stylesheet">
+    <script src="C:\Users\Roxane\VS\projet-web\js\organisation_table.js"></script>
+  </head>
+  <body>
+    <header>
+        <ul id="menu_accueil">
+            <li class="site-title"><a href="C:\Users\Roxane\VS\projet-web\html\home.html">YOXANE</a></li>
+            <li><a href="C:\Users\Roxane\VS\projet-web\html\home.html">Home</a></li>
+            <li><a href="news.asp">Commisions </a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About us</a></li>
+            <li><a href="shop">Shop</a></li>
+        </ul>
+        <div>
+            <img src= "C:\Users\Roxane\VS\projet-web\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
+            <div class="Quote_home">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
+        </div>
+
+        <ul id="menu_choice_img">
+          <li onclick="selection_all()">All</li>
+          <li onclick="selection_rox()">Enaxor</li>
+          <li onclick="selection_yo()">Nolwen</li>
+          <li>Fanart</li>
+          <li id="panier" onclick="Open()">panier</li>
+        </ul>
+
+        <Div class="cart">
+          <h2 class="cart-title">YOUR CART</h2>
+          <div class="cart-content">
+            <div class="cart-box">
+            </div>
+        <i class='bx bx-x' id="quit_cart" onclick="Quit()"></i>
+        </DIV>
+    </header>  
+
+  
+          
+
+    <div class="container" id="img_container">
+      <div class="image-container">
+        <img src="C:\Users\Roxane\VS\projet-web\img\roxane_dessin.jpg" alt="Image 1">
+        <i class='bx bx-shopping-bag add-cart'></i>
+        <h2 class="title-drawing">Ceci est la description de l'image.</h2>
+      </div>
+      <div class="image-container">
+        <img src="C:\Users\Roxane\VS\projet-web\img\yoke_dessin.jpg" alt="Image 2">
+        <i class='bx bx-shopping-bag add-cart'></i>
+        <h2 class="title-drawing">Ceci est la d="escription de l'image.</h2>
+      </div>
+      <div class="image-container">
+        <img src="C:\Users\Roxane\VS\projet-web\img\roxane_dessin.jpg" alt="Image 3">
+        <i class='bx bx-shopping-bag add-cart'></i>
+        <h2 class="title-drawing">Ceci est la description de l'image.</h2>
+      </div>
+      <div class="image-container">
+        <img src="C:\Users\Roxane\VS\projet-web\img\roxane_fanart.jpg" alt="Image 4">
+        <i class='bx bx-shopping-bag add-cart'></i>
+        <h2 class="title-drawing">Ceci est la description de l'image.</h2>
+      </div>
+      <div class="image-container">
+        <img src="C:\Users\Roxane\VS\projet-web\img\yoke_dessin.jpg" alt="Image 5">
+        <i class='bx bx-shopping-bag add-cart'></i>
+        <h2 class="title-drawing">Ceci est la description de l'image.</h2>
+      </div>
+      <div class="image-container">
+        <img src="C:\Users\Roxane\VS\projet-web\img\roxane_dessin.jpg" alt="Image 6">
+        <i class='bx bx-shopping-bag add-cart'></i>
+        <h2 class="title-drawing">Ceci est la description de l'image.</h2>
+      </div>
+    </div>
+
+        <script>
+          // Get all images in the table
+          const container = document.querySelector('#img_container');
+          const images = container.querySelectorAll('img');
+          images.forEach(img => {
+            if (img.src.includes('roxane')) {
+              img.classList.add('roxane');
+              img.classList.add("dessin");
+            }
+            if (img.src.includes('yoke')){
+              img.classList.add('yoke');
+              img.classList.add("dessin");
+            }
+          });
+        </script>
+            <script src="C:\Users\Roxane\VS\projet-web\js\organisation_table.js"></script>
+</body>
+</body>
+</html>
