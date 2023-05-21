@@ -66,8 +66,14 @@ function ready(){
   //add to cart
   var addCart = document.getElementsByClassName('add-cart')  //will store all elements with the casll .add-cart
   for (var i =0; i< addCart.length; i++){
-    var button =addCart[i]
+    var button = addCart[i]
     button.addEventListener("click",addCartClicked)  //assingning the button to add the items
+  }
+
+  var quantity = document.getElementsByClassName("cart-quantity-input");
+  for(var i = 0; i < quantity.length; i++){
+    var input = quantity[i];
+    input.addEventListener('change',quantityChanged);
   }
 
 }
@@ -75,6 +81,8 @@ function ready(){
 function removeCartItem(event){
   var ButtonClicked =event.target  //adding the remove event
   ButtonClicked.parentElement.remove()  //when the button clicked, we call the function remove
+  updateTotalPrice() 
+
 }
 
 
@@ -82,27 +90,63 @@ function addCartClicked(event) {
   var button = event.target;
   var shopProducts = button.parentElement;
   var title = shopProducts.getElementsByClassName('title-drawing')[0].innerText;
+  var price =shopProducts.getElementsByClassName('price')[0].innerText;
   var ProductImage = shopProducts.getElementsByClassName("dessin")[0].src;
-  addDrawing(title, ProductImage);
+  console.log(title); // Check the value of the innerText property
+  addDrawing(title, ProductImage, price);
 }
 
-function addDrawing(title, ProductImage) {
-  var cartShopBox = document.createElement("div");
-  cartShopBox.classList.add('cart-box');
+function addDrawing(title, ProductImage,price) {
+  var cartShopBox = document.createElement("div");  //create a new element 
+  cartShopBox.classList.add('cart-box');  //Add to the class cart-box
   var cartItems = document.getElementsByClassName("cart-content")[0];
   var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
   for (var i = 0; i < cartItemsNames.length; i++) {
     if (cartItemsNames[i].innerText == title) {
-      return;
+      alert("This drawing is already in the cart!");
+          return;
     }
   }
+
+
+  //tell the prgm how to add a box content
   var cartBoxContent = `
-    <img src="${ProductImage}" alt="Image 1" class="cart-img">
-    <div class="detail-box">
-      <div class="cart-product-title">${title}</div>
-    </div>
-    <i class='bx bxs-trash-alt remove'></i>`;
+  <img src="${ProductImage}" alt="Image 1" class="cart-img"> 
+  <div class="detail-box">
+  <div class="cart-product-title">${title}</div>
+  <span class="price" data-price="${price}">${price}</span>
+  <input class="cart-quantity-input" type="number" value="1">
+  </div>
+  <i class='bx bxs-trash-alt remove'></i>`;
+
+
   cartShopBox.innerHTML = cartBoxContent;
+  cartShopBox.getElementsByClassName("cart-quantity-input")[0].addEventListener("change", quantityChanged);
   cartItems.append(cartShopBox);
   cartShopBox.getElementsByClassName("remove")[0].addEventListener("click", removeCartItem);
+  updateTotalPrice();
+}
+
+function quantityChanged(event) {
+  var input = event.target;
+  var priceElement = input.parentElement.getElementsByClassName("price")[0];
+  var price = parseFloat(priceElement.getAttribute("data-price").replace("€", ""));
+  var quantity = input.value;
+  var total = price * quantity;
+  priceElement.innerText = total + "€";
+  
+  updateTotalPrice(); 
+}
+
+function updateTotalPrice() {
+  var total = 0;
+  var cartItems = document.querySelectorAll('.cart-content');
+  cartItems.forEach(item => {
+    var priceElement = item.querySelector('.price');
+    var quantityElement = item.querySelector('.cart-quantity-input');
+    var price = parseFloat(priceElement.dataset.price);
+    var quantity = quantityElement.value;
+    total += price * quantity;
+  });
+  document.querySelector('.cart-total-price').innerText = total + '€';
 }
