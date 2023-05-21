@@ -92,7 +92,6 @@ function addCartClicked(event) {
   var title = shopProducts.getElementsByClassName('title-drawing')[0].innerText;
   var price =shopProducts.getElementsByClassName('price')[0].innerText;
   var ProductImage = shopProducts.getElementsByClassName("dessin")[0].src;
-  console.log(title); // Check the value of the innerText property
   addDrawing(title, ProductImage, price);
 }
 
@@ -123,8 +122,8 @@ function addDrawing(title, ProductImage,price) {
   cartShopBox.innerHTML = cartBoxContent;
   cartShopBox.getElementsByClassName("cart-quantity-input")[0].addEventListener("change", quantityChanged);
   cartItems.append(cartShopBox);
-  cartShopBox.getElementsByClassName("remove")[0].addEventListener("click", removeCartItem);
   updateTotalPrice();
+  cartShopBox.getElementsByClassName("remove")[0].addEventListener("click", removeCartItem);
 }
 
 function quantityChanged(event) {
@@ -140,13 +139,15 @@ function quantityChanged(event) {
 
 function updateTotalPrice() {
   var total = 0;
-  var cartItems = document.querySelectorAll('.cart-content');
-  cartItems.forEach(item => {
-    var priceElement = item.querySelector('.price');
-    var quantityElement = item.querySelector('.cart-quantity-input');
+  var cartItems = document.getElementsByClassName('cart-content')[0].getElementsByClassName('cart-box');
+  console.log(cartItems)
+  for (var i = 0; i < cartItems.length; i++) {
+    var priceElement = cartItems[i].querySelector('.price');
+    console.log(priceElement)
+    var quantityElement = cartItems[i].querySelector('.cart-quantity-input');
     var price = parseFloat(priceElement.dataset.price);
     var quantity = quantityElement.value;
     total += price * quantity;
-  });
+  }
   document.querySelector('.cart-total-price').innerText = total + '€';
 }

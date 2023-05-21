@@ -109,6 +109,11 @@ body {
     margin-top:10px;
 
 }
+
+.cart{
+    padding-left: 10px;
+}
+
 .cart-content {
     overflow-y: auto;
     overflow-x: hidden;
@@ -202,5 +207,9 @@ body {
     opacity: 1;
 }
 
+
+.cart-total-price{
+    padding: 10px;
+}
 
 
