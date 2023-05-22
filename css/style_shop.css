@@ -50,27 +50,27 @@ body {
    }
    
    /* Style for the menu choice image */
-   #menu_choice_img {
-    list-style-type: none; /* Remove the default list style */
-    margin: 0; /* Remove the default margin */
-    padding-top: 20px; /* Add 20px of padding to the top of the element */
-    padding-bottom: 20px; /* Add 20px of padding to the bottom of the element */
-    overflow: hidden; /* Hide any overflowing content */
-    background-color: none; /* Set the background color to transparent */
-    display: flex; /* Display the element as a flex container */
-    justify-content: flex-start; /* Align the flex items to the start of the main axis (left) */
+#menu_choice_img {
+list-style-type: none; /* Remove the default list style */
+margin: 0; /* Remove the default margin */
+padding-top: 20px; /* Add 20px of padding to the top of the element */
+padding-bottom: 20px; /* Add 20px of padding to the bottom of the element */
+overflow: hidden; /* Hide any overflowing content */
+background-color: none; /* Set the background color to transparent */
+display: flex; /* Display the element as a flex container */
+justify-content: flex-start; /* Align the flex items to the start of the main axis (left) */
 }
    
-   /* Style for the menu choice image list items */
-   #menu_choice_img li{
-    display: block; /* Display the list items as block elements */
-    color: white; /* Set the text color to white */
-    text-align: center; /* Center-align the text */
-    padding: 20px 20px; /* Add 20px of padding to all sides of the element */
-    text-decoration: none; /* Remove any text decoration (e.g. underlines) */
-    font-size:20px; /* Set the font size to 20px */
-   }
-   
+/* Style for the menu choice image list items */
+#menu_choice_img li{
+display: block; /* Display the list items as block elements */
+color: white; /* Set the text color to white */
+text-align: center; /* Center-align the text */
+padding: 20px 20px; /* Add 20px of padding to all sides of the element */
+text-decoration: none; /* Remove any text decoration (e.g. underlines) */
+font-size:20px; /* Set the font size to 20px */
+}
+
    
    /* Change the link color to #111 (black) on hover */
  #menu_choice_img li:hover {
@@ -153,8 +153,9 @@ body {
     top: 10px;
     right: 10px;
     cursor: pointer;
-  }
+}
 
+  
 
 .container { /*tableau contenant les images de présentation*/
     display: grid;
@@ -212,4 +213,55 @@ body {
     padding: 10px;
 }
 
+.ancienne-commandes {
+    opacity:0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
 
+}
+
+.ancienne-commandes h2 {
+text-align: center;
+}
+
+.ancienne-commandes.active{
+    transition:0.3s;
+    opacity:1;    
+    z-index: 1;
+}
+
+.formulaire {
+
+    opacity:0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background-color: gray;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.formulaire form {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.formulaire.active{
+    transition:0.3s;
+    opacity:1;    
+    z-index: 1;
+}

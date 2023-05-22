@@ -27,17 +27,29 @@
           <li onclick="selection_yo()">Nolwen</li>
           <li>Fanart</li>
           <li id="panier" onclick="Open()">panier</li>
+          <li id="commandes" onclick="Open_old_orders()" >Voir mes commandes</li>
+          
         </ul>
 
+
+        <div class="ancienne-commandes">
+          <h2>Old commands</h2>
+          <i class='bx bx-x' id="quit_command" onclick="Close_old_orders()"></i>
+        </div>
         <Div class="cart">
           <h2 class="cart-title">YOUR CART</h2>
           <div class="cart-total">
             Total: <span class="cart-total-price">0€</span>
            </div>
           <div class="cart-content"></div>
-
+          <section>
+            <fieldset class="bouton_buy-cart">
+                <button type="button" onclick="buy()">BUY</button>
+          </fieldset>
+          </section>
         <i class='bx bx-x' id="quit_cart" onclick="Quit()"></i>
         </DIV>
+        <div class="formulaire"></div>
     </header>  
 
   
