@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>"Yoxane - Accueil"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
+    <title>"Yoxane - Shop"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
     <link type="text/css"rel= "stylesheet" href="..\css\style_shop.css">
+    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2/css/boxicons.min.css" rel="stylesheet">
     <script src="..\js\organisation_table.js"></script>
   </head>
   <body>
-    <header>
-        <ul id="menu_accueil">
-            <li class="site-title"><a href="..\html\home.html">YOXANE</a></li>
+    <header class="header">
+      <nav class="nav_bar">
+        <div id="menu_home">
+          <ul>
+            <li class="site_title"><a href="#">YOXANE</a></li>
             <li><a href="..\html\home.html">Home</a></li>
-            <li><a>Commisions </a></li>
-            <li><a >Contact</a></li>
-            <li><a>About us</a></li>
-            <li><a href="shop">Shop</a></li>
+            <li><a href="..\html\Shop.html">Shop</a></li>
+            <li><a href="..\html\commissions.html">Commisions </a></li>
+            <li><a href="..\html\contact.html">Contact</a></li>
+            <li><a href="..\html\about.html">About us</a></li>
         </ul>
-        <div>
-            <img src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
-            <div class="Quote_home">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
         </div>
+      </nav>
+      <div>
+          <img class= "header_img" src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
+          <div class="Container_Home_Quote">
+            <div class="Home_quote">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
+            </div>
+      </div>
+    </header>    
 
-       
-    </header>  
 
   
     <ul id="menu_choice_img">
@@ -30,14 +37,14 @@
       <li onclick="selection_rox()">Enaxor</li>
       <li onclick="selection_yo()">Nolwen</li>
       <li>Fanart</li>
-      <li id="panier" onclick="Open()">panier</li>
-      <li id="commandes" onclick="Open_old_orders()" >Voir mes commandes</li>
+      <li id="cart" onclick="Open()">Cart</li>
+      <li id="commandes" onclick="Open_old_orders()" >See my orders</li>
       
     </ul>
 
 
-    <div class="ancienne-commandes">
-      <h2>Old commands</h2>
+    <div class="old_orders">
+      <h2>Old orders</h2>
       <i class='bx bx-x' id="quit_command" onclick="Close_old_orders()"></i>
     </div>
     <Div class="cart">
@@ -53,8 +60,8 @@
       </section>
     <i class='bx bx-x' id="quit_cart" onclick="Quit()"></i>
     </DIV>
-    <div class="formulaire">
-      <i class='bx bx-x' id="quit_form" onclick="Close_formulaire()"></i>
+    <div class="form">
+      <i class='bx bx-x' id="quit_form" onclick="Close_form()"></i>
     </div>     
 
     <div class="container" id="img_container">
@@ -127,6 +134,13 @@
         }
         </script>
             <script src="..\js\organisation_table.js"></script>
-</body>
-</body>
+
+            <footer class="footer">
+              <a class = "footer_home" href="..\html\home.html">Home</a>
+              <a class = "footer_shop" href="..\html\Shop.html">Shop</a>
+              <a class = "footer_commissions" href="..\html\Commissions.html">Commissions</a>
+              <a class = "footer_contact" href="..\html\Contact.html">Contact</a>
+              <a class = "footer_about" href="..\html\About.html">About Us</a>
+            </footer>
+  </body>
 </html>

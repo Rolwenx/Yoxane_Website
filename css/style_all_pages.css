@@ -1,0 +1,126 @@
+/* ---------------------- HEADER -------------------------- */
+.header{
+
+    justify-content: space-between;
+}
+
+.site-title { /*pour cibler que le titre*/
+    margin-right: auto;
+}
+
+/* ---------------------- MENU -------------------------- */
+.nav_bar {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFDB58;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* X, Y, Blur radius, Spread radius, color*/
+    box-shadow: 1px 1px 3px 1px black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#menu_home ul {
+    list-style-type: none;
+    /*background-image: url("https://img.freepik.com/free-vector/winter-light-blue-gradient-background_53876-120755.jpg");*/
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#menu_home li a{
+    display: flex;
+    color: black;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size:20px;
+}
+
+#menu_home li a:hover {
+    background-color: white;
+    box-shadow: 1px 1px 2px 1px black;
+    text-decoration: underline;
+}
+
+.menu_bar_button{
+    justify-content: space-between;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    /* so that it doesn't appear on the website per default, but only when sized reduced*/
+    display: none;
+    flex-direction: column;
+}
+
+.menu_bar{
+    height: 6px;
+    width: 100%;
+    background-color: black;
+    border-radius: 20px;
+}
+
+/* ---------- HEADER - CENTRAL IMAGE  ---------------- */
+
+.Home_quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color:white;
+    font-size:350%;
+    text-shadow: 1px 1px 1px #515151;
+    background-color: rgb(255,255,255,0.3);
+    box-shadow: 1px 1px 3px 5px black;
+}
+
+
+.header_img{
+    width: 100%;
+    height: 600px;
+    align-items: center;
+    box-shadow: 1px 1px 3px 1px black;
+}
+
+/* ---------------------- FOOTER -------------------------- */
+.footer {
+    margin-top: auto;
+    padding: 4px;
+    overflow: hidden;
+    background-color: #FFDB58;
+    /* X, Y, Blur radius, Spread radius, color*/
+    box-shadow: 1px 1px 3px 1px black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 50px;
+}
+
+.footer_home, .footer_shop, .footer_commissions, .footer_contact, .footer_about{
+    padding: 5px 10px;
+    display: inline-block;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    border: 1px solid black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    /*Increase size button*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(128, 0, 0,0.7);
+    margin: 10px;
+    font-weight: 600;
+    
+}
+
+/* ---------------------- BODY -------------------------- */
+body {
+    background-color:#5F9EA0;
+    margin-top: 4px;
+    padding: 0;
+}

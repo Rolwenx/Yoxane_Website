@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>"Yoxane - Accueil"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
+    <title>"Yoxane - Home"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
     <link type="text/css" rel= "stylesheet" href="..\css\style_accueil.css ">
+    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
   </head>
   <body>
-    <header>
-        <ul id="menu_accueil">
-            <li class="site-title"><a href="#">YOXANE</a></li>
+    <header class="header">
+      <nav class="nav_bar">
+        <div id="menu_home">
+          <ul>
+            <li class="site_title"><a href="#">YOXANE</a></li>
             <li><a href="..\html\home.html">Home</a></li>
-            <li><a>Commisions </a></li>
-            <li><a>Contact</a></li>
-            <li><a>About us</a></li>
             <li><a href="..\html\Shop.html">Shop</a></li>
+            <li><a href="..\html\commissions.html">Commisions </a></li>
+            <li><a href="..\html\contact.html">Contact</a></li>
+            <li><a href="..\html\about.html">About us</a></li>
         </ul>
-        <div>
-            <img src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
-            <div class="Quote_home">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
         </div>
-    </header> 
+      </nav>
+      <div>
+          <img class= "header_img" src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
+          <div class="Container_Home_Quote">
+            <div class="Home_quote">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
+            </div>
+      </div>
+  </header> 
     
-    
-
-    
-    <h1>Order, Buy, any drawing</h1>
-
+  <h1 class="accueil_buy_phrase">Explore & Order</h1>
+  <section>
     <div class="container" id="drawing_home">
       <div class="image-container">
       <a href="..\html\Shop.html?selection=enaxor"> <!--the "?" allow to indicate the start of a string-->
@@ -50,8 +54,18 @@
         <button class="buy-button">GO TO SHOP</button>
       </a>
     </div>
+  </section>
+    
 
     <h1>Transform your ideas into art with our drawing commissions!</h1>
-    <p>Ceci est un paragraphe.</p>
+    
+    <footer class="footer">
+      <a class = "footer_home" href="..\html\home.html">Home</a>
+      <a class = "footer_shop" href="..\html\Shop.html">Shop</a>
+      <a class = "footer_commissions" href="..\html\Commissions.html">Commissions</a>
+      <a class = "footer_contact" href="..\html\Contact.html">Contact</a>
+      <a class = "footer_about" href="..\html\About.html">About Us</a>
+    </footer>
+
   </body>
 </html>

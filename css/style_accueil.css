@@ -1,56 +1,6 @@
-#menu_accueil {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-
-#menu_accueil li a{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
-    font-size:20px;
-}
-
-/* Change the link color to #111 (black) on hover */
-#menu_accueil li a:hover {
-    background-color: #111;
-    
-}
-
 h1{
     text-align: center;
 }
-
-
-.site-title { /*pour cibler que le titre*/
-    margin-right: auto;
-}
-
-  
-.Quote_home {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color:white;
-    font-size:350%;
-    text-shadow: 0px 0px 10px #515151;
-    
-}
-
-body {
-    background-color:#5F9EA0
-}
-  
 
 .container { /*tableau contenant les images de présentation*/
     display: grid;

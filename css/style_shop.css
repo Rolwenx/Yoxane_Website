@@ -78,7 +78,7 @@ cursor: pointer;
     color: #ffd700; 
 }
 
-#panier { /*pour cibler que le panier*/
+#cart { /*pour cibler que le panier*/
     margin-left: auto;
     cursor: pointer;
 }
@@ -215,7 +215,7 @@ cursor: pointer;
     padding: 10px;
 }
 
-.ancienne-commandes {
+.old_orders {
     opacity:0;
     position: fixed;
     top: 50%;
@@ -240,7 +240,7 @@ text-align: center;
     z-index: 1;
 }
 
-.formulaire {
+.form {
     opacity:0;
     position: fixed;
     top: 50%;
