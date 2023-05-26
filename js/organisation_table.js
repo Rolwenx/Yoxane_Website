@@ -1,35 +1,50 @@
-// Get all images in the table
+// Select all images in the table
 function selection_rox(){
-    const images = document.querySelectorAll('#img_container img');
-    images.forEach(img => {
-        if (!img.classList.contains('roxane')) {
-        img.parentElement.style.display = 'none';
-        } else {
-        img.parentElement.style.display = 'grid';
-        }
-    });
-    };
-
-
-function selection_all(){
-  const container = document.querySelector('#img_container');
-  const images = container.querySelectorAll('img');
+  // Get all images within the element with id 'img_container'
+  const images = document.querySelectorAll('#img_container img');
+  // Loop through each image
   images.forEach(img => {
-    img.parentElement.style.display = 'grid';
+  // Check if the image does not have the class 'roxane'
+  if (!img.classList.contains('roxane')) {
+  // Hide the parent element of the image
+  img.parentElement.style.display = 'none';
+  } else {
+  // Show the parent element of the image
+  img.parentElement.style.display = 'grid';
+  }
   });
-}
-
-function selection_yo(){
-    const images = document.querySelectorAll('#img_container img');
-    images.forEach(img => {
-        if (!img.classList.contains('yoke')) {
-        img.parentElement.style.display = 'none';
-        } else {
-        img.parentElement.style.display = 'grid';
-        }
-    });
-};
-
+ };
+ 
+ // Select all images
+ function selection_all(){
+  // Get the element with id 'img_container'
+  const container = document.querySelector('#img_container');
+  // Get all images within the container
+  const images = container.querySelectorAll('img');
+  // Loop through each image
+  images.forEach(img => {
+  // Show the parent element of the image
+  img.parentElement.style.display = 'grid';
+  });
+ }
+ 
+ // Select images with the class 'yoke'
+ function selection_yo(){
+  // Get all images within the element with id 'img_container'
+  const images = document.querySelectorAll('#img_container img');
+  // Loop through each image
+  images.forEach(img => {
+  // Check if the image does not have the class 'yoke'
+  if (!img.classList.contains('yoke')) {
+  // Hide the parent element of the image
+  img.parentElement.style.display = 'none';
+  } else {
+  // Show the parent element of the image
+  img.parentElement.style.display = 'grid';
+  }
+  });
+ };
+ 
 
 
 // Allow us to open and close the cart
@@ -99,7 +114,7 @@ function addDrawing(title, ProductImage,price) {
   var cartShopBox = document.createElement("div");  //create a new element 
   cartShopBox.classList.add('cart-box');  //Add to the class cart-box
   var cartItems = document.getElementsByClassName("cart-content")[0];
-  var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
+  var cartItemsNames = cartItems.getElementsByClassName("cart-product-title"); //récupère tout les titles des products
   for (var i = 0; i < cartItemsNames.length; i++) {
     if (cartItemsNames[i].innerText == title) {
       alert("This drawing is already in the cart!");
@@ -138,19 +153,27 @@ function quantityChanged(event) {
 }
 
 function updateTotalPrice() {
+  // Initialize the total price to 0
   var total = 0;
+  // Get all cart items within the element with class 'cart-content'
   var cartItems = document.getElementsByClassName('cart-content')[0].getElementsByClassName('cart-box');
-  console.log(cartItems)
+  // Loop through each cart item
   for (var i = 0; i < cartItems.length; i++) {
-    var priceElement = cartItems[i].querySelector('.price');
-    console.log(priceElement)
-    var quantityElement = cartItems[i].querySelector('.cart-quantity-input');
-    var price = parseFloat(priceElement.dataset.price);
-    var quantity = quantityElement.value;
-    total += price * quantity;
+  // Get the price element within the cart item
+  var priceElement = cartItems[i].querySelector('.price');
+  // Get the quantity input element within the cart item
+  var quantityElement = cartItems[i].querySelector('.cart-quantity-input');
+  // Get the price from the data-price attribute and convert it to a number
+  var price = parseFloat(priceElement.dataset.price);
+  // Get the value of the quantity input and convert it to a number
+  var quantity = quantityElement.value;
+  // Add the price times quantity to the total
+  total += price * quantity;
   }
+  // Update the text of the element with class 'cart-total-price' to display the total price
   document.querySelector('.cart-total-price').innerText = total + '€';
-}
+ }
+ 
 
 
 
@@ -173,8 +196,12 @@ function Close_old_orders() {
 }
 
 let commandCount = 0; // Keep track of the number of commands
+
 function buy() {
-  let form =createForm();
+  let form = document.querySelector('.formulaire form');
+  if (!form) {
+    form = createForm();
+  }
   Open_formulaire();
 
   let cartContent = document.querySelector(".cart-content");
@@ -182,7 +209,7 @@ function buy() {
   let titles = [];
   let titleElements = document.querySelectorAll('.cart-product-title');
   titleElements.forEach(function (element) {
-      titles.push(element.textContent);
+      titles.push(element.textContent); //ajoute le texte contenu dans le title element
   });
   let pastOrders=titles;
   console.log(pastOrders)
@@ -200,28 +227,48 @@ function buy() {
     event.preventDefault();
     
     // Get the values of the form fields
-    let nom = document.querySelector('#nom').value;
-    let prenom = document.querySelector('#prenom').value;
-    let telephone = document.querySelector('#telephone').value;
-    let email = document.querySelector('#email').value;
-    
-    // Create a new element to display the coordinates
-    let coordinatesElement = document.createElement('div');
-    coordinatesElement.innerHTML = `
-    My data : <br>
-      Nom: ${nom}; 
-      Prénom: ${prenom};
-      Téléphone: ${telephone};
-      Email: ${email}
-    `;
-      list.appendChild(coordinatesElement);
+      let nom = document.querySelector('#nom').value;
+      let prenom = document.querySelector('#prenom').value;
+      let telephone = document.querySelector('#telephone').value;
+      let email = document.querySelector('#email').value;
+      
 
-      while (cartContent.hasChildNodes()) {
-        cartContent.removeChild(cartContent.firstChild);
-    }
-    updateTotalPrice();
-    Close_formulaire()
-  });
+      if (!nom || !prenom || !telephone || !email) {
+        alert('Please fill in all the fields.');
+        return;
+      }
+      // Validate the telephone number
+      if (/[a-zA-Z]/.test(telephone)) {
+        alert('Invalid telephone number. The number must not contain any letters.');
+        return;
+      }
+      if (!/^0[167]\d{8}$/.test(telephone)) {
+        alert('Invalid telephone number. The number must start with 06, 07 or 01 and contain a total of 10 digits.');
+        return;
+      }
+      if (!/@gmail\.com$|@yopmail\.com$|@yahoo\.fr$|@hotmail\.fr$|@outlook\.com$/.test(email)) {
+        alert('Invalid email. The email must be a Gmail, Yopmail, Yahoo, Hotmail or Outlook address.');
+        return;
+      }
+
+
+      // Create a new element to display the coordinates
+      let coordinatesElement = document.createElement('div');
+      coordinatesElement.innerHTML = `
+      My data : <br>
+        Nom: ${nom}; 
+        Prénom: ${prenom};
+        Téléphone: ${telephone};
+        Email: ${email}
+      `;
+        list.appendChild(coordinatesElement);
+
+        while (cartContent.hasChildNodes()) {
+          cartContent.removeChild(cartContent.firstChild);
+      }
+      updateTotalPrice();
+      Close_formulaire()
+    });
    
   // Get the cart element and the list of old command
   let oldCommands = document.querySelector(".ancienne-commandes");
@@ -315,6 +362,7 @@ function Close_formulaire() {
   let form = document.querySelector(".formulaire");
   // Add the class 'active' to the .cart element
   form.classList.remove("active");
+  form.querySelector('form').reset();
 }
 
 

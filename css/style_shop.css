@@ -69,6 +69,7 @@ text-align: center; /* Center-align the text */
 padding: 20px 20px; /* Add 20px of padding to all sides of the element */
 text-decoration: none; /* Remove any text decoration (e.g. underlines) */
 font-size:20px; /* Set the font size to 20px */
+cursor: pointer;
 }
 
    
@@ -206,6 +207,7 @@ font-size:20px; /* Set the font size to 20px */
 
 .image-container:hover .add-cart{
     opacity: 1;
+    cursor: pointer;
 }
 
 
@@ -221,9 +223,10 @@ font-size:20px; /* Set the font size to 20px */
     transform: translate(-50%, -50%);
     width: 500px;
     height: 500px;
-    background-color: white;
+    background-color: #5F9EA0;
     padding: 20px;
     box-sizing: border-box;
+    box-shadow:  -2px 0 4px hsl(0 4% 5%/10%);
 
 }
 
@@ -238,7 +241,6 @@ text-align: center;
 }
 
 .formulaire {
-
     opacity:0;
     position: fixed;
     top: 50%;

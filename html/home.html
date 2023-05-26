@@ -2,52 +2,56 @@
 <html>
   <head>
     <title>"Yoxane - Accueil"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
-    <link rel= "stylesheet" href="..\css\style_accueil.css ">
+    <link type="text/css" rel= "stylesheet" href="..\css\style_accueil.css ">
   </head>
   <body>
     <header>
         <ul id="menu_accueil">
             <li class="site-title"><a href="#">YOXANE</a></li>
             <li><a href="..\html\home.html">Home</a></li>
-            <li><a href="news.asp">Commisions </a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About us</a></li>
+            <li><a>Commisions </a></li>
+            <li><a>Contact</a></li>
+            <li><a>About us</a></li>
             <li><a href="..\html\Shop.html">Shop</a></li>
         </ul>
         <div>
             <img src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
             <div class="Quote_home">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
         </div>
-    </header>    
+    </header> 
+    
+    
+
+    
     <h1>Order, Buy, any drawing</h1>
 
+    <div class="container" id="drawing_home">
+      <div class="image-container">
+      <a href="..\html\Shop.html?selection=enaxor"> <!--the "?" allow to indicate the start of a string-->
+        <img src="..\img\roxane_dessin.jpg" alt="Image 1">
+        <div class="overlay">
+          <div class="text">Enaxor</div>
+        </div>
+      </a>
+      </div>
+      <div class="image-container">
+      <a href="..\html\Shop.html?selection=nolwen">
+        <img src="..\img\yoke_dessin.jpg" alt="Image 2">
+        <div class="overlay">
+          <div class="text">Nolwen</div>
+        </div>
+      </a>
+      </div>
+     </div>
+      
+    </div>
+    <div class="button_home">
+      <a href="..\html\Shop.html">
+        <button class="buy-button">GO TO SHOP</button>
+      </a>
+    </div>
 
-    <table class="container">
-      <tr>
-        <td>
-          <div class="image-container">
-            <img src="..\img\roxane_dessin.jpg" alt="Image 1">
-            <div class="overlay">
-              <div class="text">Enaxor</div>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="image-container">
-            <img src="..\img\yoke_dessin.jpg" alt="Image 2">
-            <div class="overlay">
-              <div class="text">Nolwen</div>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </table>
-        <section>
-          <fieldset class="bouton_buy">
-              <button type="button">BUY</button>
-        </fieldset>
-        </section>
-    </body>
+    <h1>Transform your ideas into art with our drawing commissions!</h1>
     <p>Ceci est un paragraphe.</p>
   </body>
 </html>
