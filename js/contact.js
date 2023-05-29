@@ -44,4 +44,5 @@ document.addEventListener("DOMContentLoaded", function() {
           popupAppears(event);
         }
       });
+
     });

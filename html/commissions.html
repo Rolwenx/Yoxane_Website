@@ -5,6 +5,7 @@
     <link rel= "stylesheet" href="../css/style_commissions.css">
     <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <script src="../js/commissions.js"></script>
   </head>
   <body>
     <header class="header">
@@ -34,9 +35,7 @@
           <h1 class="header_title">Commissions Info</h1>
           <p>You don't like our drawings, but like our style ? Make us a commission.</p>
         </div>
-
         <div class="upper_commissions">
-
           <div class="first_box">
               <div class="front_content">
                 <img class="upper_img" src="../img/Commissions/box_traditional_drawing.jpeg" alt="Commission Tradition Drawing">
@@ -44,13 +43,13 @@
                   <h1 class="upper_title">Traditional</h1>
                   <div class="text_over_image">
                     <p>Face: 10 €</p>
-                  <p>Halfbody: 15€</p>
-                  <p>Fullbody: 20€</p>
-                  <p>Landscape: 20€</p>
+                    <p>Halfbody: 15€</p>
+                    <p>Fullbody: 20€</p>
+                    <p>Landscape: 20€</p>
+                    <input type="submit" id="openPopup" value="Make a commission" class="commission_button" data-popup="popup1">
                   </div>
                 </div>
               </div>
-
           </div>
           
           <div class="second_box">
@@ -62,6 +61,7 @@
                   <p>Portrait: 25 €</p>
                   <p>Landscape: 30€</p>
                   <p>Face: 20€</p>
+                  <input type="submit" id="openPopup2" value="Make a commission" class="commission_button" data-popup="popup2">
                 </div>
               </div>
             </div>
@@ -78,6 +78,7 @@
                   <p>Halfbody: 15€</p>
                   <p>Fullbody: 20€</p>
                   <p>Landscape: 20€</p>
+                  <input type="submit" id="openPopup3" value="Make a commission" class="commission_button" >
                 </div>
               </div>
             </div>
@@ -93,6 +94,7 @@
                   <p>Face: 10 €</p>
                   <p>Halfbody: 15€</p>
                   <p>Fullbody: 20€</p>
+                  <input type="submit" id="openPopup4" value="Make a commission" class="commission_button">
                 </div>
               </div>
             </div>
@@ -108,12 +110,9 @@
                   <p>Face: 10 €</p>
                   <p>Halfbody: 15€</p>
                   <p>Fullbody: 20€</p>
+                  <input type="submit" id="openPopup5" value="Make a commission" class="commission_button">
                 </div>
               </div>
-            </div>
-            <div class="back_content">
-              <h1 class="upper_title">Full Digital</h1>
-              <p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>
             </div>
           </div>
         </div>
@@ -135,13 +134,53 @@
           </div>
         </div>
 
-        <div class="table">
+        <!--POP UP FORM-->
+        <div class="popup" id="divOne">
+          <div class="wrapper">
+            <div class="popup_header">
+              <h2>Make A Commission</h2><a class="closePopup" href="#">&times;</a>
+              <p>Please give as much details as possible about your commissions.</p>
+            </div>
+            
+            <div class="content">
+              <div class="form">
+                <form>
+                  <label for="">Username*</label>
+                  <input type="text" name="username" class="input" placeholder="Name..">
+                  		
+                  <label for="">Email*</label>
+                  <input type="mail" name="email" class="input" placeholder="Email..">
 
+                  <div class="input_field_type">
+                  <label for="">Type of Commission*</label>
+                  <select name="type" id="reason_select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="commissions">Traditional</option>
+                    <option value="drawing">Painting</option>
+                    <option value="other">Sketch</option>
+                    <option value="other">Full Digital</option>
+                  </select>
+                  </div>
+
+                    <div class="input_field_big_text">
+                      <label for="">Details about order*</label>
+                      <textarea name="message" class="input" placeholder="Details about order.."></textarea>
+                    </div>
+                  <input class="submit_form" type="submit" value="Submit">
+                  
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-
+    
         <div class="outside_field">
           <h1 class="header_title">Table of Price</h1>
           <p>See our prices in full details! Come on, don't be cheap!</p>
+        </div>
+
+        <div class="table">
+
         </div>
       </div>
     </section>
