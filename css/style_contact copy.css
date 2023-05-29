@@ -1,39 +1,3 @@
-
-/* ---------------------- OUTSIDE -------------------------- */
-.outside_field{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-
-
-}
-.outside_field h1{
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 10px;
-    text-align: center;
-    color:  #FFDB58;
-    text-shadow: 1px 1px 6px black;
-    font-size: 50px;
-}
-
-
-.outside_field p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    opacity: 0.8;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    color: white;
-}
-
-
-
-
-/* ---------------------- CONTACT US FIELD -------------------------- */
-
-
 .container{
 
     position: relative;
@@ -43,7 +7,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 60px;
 }
 
 .form{
@@ -53,7 +16,7 @@
     max-width: 920px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 0 10px 1px rgb(0,0,0,0.5);
+    box-shadow: 0 0 25px 1px rgb(0,0,0,0.5);
     display:grid;
     /* To have the border radius even on the 2 forms*/
     overflow: hidden;
@@ -344,8 +307,7 @@ then show the before/after when the user is selecting(focused) the field*/
     font-size: 13px;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
-    opacity: 0.8;
-    color: rgb(62, 57, 57);
+    opacity: 0.9;
 }
 
 
@@ -369,12 +331,6 @@ then show the before/after when the user is selecting(focused) the field*/
     color: rgb(62, 57, 57);
     font-size: 15px;
     font-weight: 800;
-    background-color: #91dce0;
-    opacity: 0.9;
-    box-shadow: 0 0 2px 0 black;
-    border-radius: 10px;
-    width: 170px;
-    text-align: center;
 }
 
 .social_media_icons{
@@ -386,7 +342,7 @@ then show the before/after when the user is selecting(focused) the field*/
 .social_media_icons a{
     width: 35px;
     height:35px;
-    border-radius: 20px;
+    border-radius: 5px;
     background: linear-gradient(45deg, #5F9EA0, #98dcdf);
     color: white;
     text-align: center;
@@ -404,13 +360,14 @@ then show the before/after when the user is selecting(focused) the field*/
 .contact_info:before{
     content: "";
     position: absolute;
-    width: 170px;
-    height: 175px;
+    width: 190px;
+    height: 180px;
     border: 22px solid #5F9EA0;
     border-radius: 50%;
     bottom: -77px;
     right: 50px;
-    left: 275px;
+    left: 270px;
+    opacity:0.9;
 }
 
 .big_circle_behind{
@@ -424,58 +381,90 @@ then show the before/after when the user is selecting(focused) the field*/
     transform: translate(-40%,38%);
 }
 
-@media only screen and (max-width: 768px) {
+
+
+@media (max-width: 920px) {
     .form {
-      display: block;
-      height: auto;
-      max-width: none;
-      border-radius: 0;
-      box-shadow: none;
-    }
-  
-    .contact_form:before,
-    .contact_form:after {
-      display: none;
-    }
-  
-    .title {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  
-    form {
-      padding: 0;
-    }
-  
-    .input_field,
-    .input_field_reason {
-      margin: 10px 0;
-    }
-  
-    .input {
-      width: 100%;
-    }
-  
-    textarea.input {
-      min-height: 120px;
-    }
-  
-    .input_field_reason select {
-      width: 100%;
-    }
-  
-    .submit_button {
-      width: 100%;
-      bottom: 0;
-      margin-bottom: 20px;
+      grid-template-columns: 1fr;
     }
   
     .contact_info:before {
-      display: none;
+      bottom: initial;
+      top: -75px;
+      right: 65px;
+      transform: scale(0.95);
     }
   
-    .big_circle_behind {
-      display: none;
+    .contact-form:before {
+      top: -13px;
+      left: initial;
+      right: 70px;
+    }
+  
+    .square {
+      transform: translate(140%, 43%);
+      height: 350px;
+    }
+  
+    .big-circle {
+      bottom: 75%;
+      transform: scale(0.9) translate(-40%, 30%);
+      right: 50%;
+    }
+  
+    .text {
+      margin: 1rem 0 1.5rem 0;
+    }
+  
+    .social-media {
+      padding: 1.5rem 0 0 0;
     }
   }
   
+  @media (max-width: 480px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    .contact-info:before {
+      display: none;
+    }
+  
+    .square,
+    .big-circle {
+      display: none;
+    }
+  
+    form,
+    .contact-info {
+      padding: 1.7rem 1.6rem;
+    }
+  
+    .text,
+    .information,
+    .social-media p {
+      font-size: 0.8rem;
+    }
+  
+    .title {
+      font-size: 1.15rem;
+    }
+  
+    .social-icons a {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
+  
+    .icon {
+      width: 23px;
+    }
+  
+    .input {
+      padding: 0.45rem 1.2rem;
+    }
+  
+    .btn {
+      padding: 0.45rem 1.2rem;
+    }
+  }
