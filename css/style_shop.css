@@ -215,7 +215,7 @@ cursor: pointer;
     padding: 10px;
 }
 
-.old_orders {
+.older_orders {
     opacity:0;
     position: fixed;
     top: 50%;
@@ -230,17 +230,17 @@ cursor: pointer;
 
 }
 
-.ancienne-commandes h2 {
+.older_orders h2 {
 text-align: center;
 }
 
-.ancienne-commandes.active{
+.older_orders.active{
     transition:0.3s;
     opacity:1;    
     z-index: 1;
 }
 
-.form {
+.form_order {
     opacity:0;
     position: fixed;
     top: 50%;
@@ -254,7 +254,7 @@ text-align: center;
 
 }
 
-.formulaire form {
+.form_order form{
     justify-content: center;
     align-items: center;
     display: flex;
@@ -262,7 +262,7 @@ text-align: center;
     margin: auto;
 }
 
-.formulaire.active{
+.form_order.active{
     transition:0.3s;
     opacity:1;    
     z-index: 1;
