@@ -1,4 +1,68 @@
 
+/* ---------------------- POPUP MESSAGE -------------------------- */
+.popup_message{
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    border: 1px solid rgba(0,0,0,0.4) ;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+    z-index: 9999;
+    /* TRANSITIONS*/
+    transition: transform 0.4s, top 0.4s;
+    visibility: hidden;
+    
+}
+
+
+.open_popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+
+.popup_message img{
+   width: 100px;
+   margin-top: -50px;
+   border-radius: 50%;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+.popup_message h2{
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top : 30px;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.popup_message button{
+    font-family: 'Poppins', sans-serif;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+    background: #5F9EA0;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.95rem;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.popup_message p{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+ }
 /* ---------------------- OUTSIDE -------------------------- */
 .outside_field{
     align-items: center;
@@ -100,6 +164,19 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     line-height: 1;
+}
+.test{
+    display: flex;
+    
+}
+.required_field{
+    font-family: 'Poppins', sans-serif;
+    color:white;
+    opacity: 0.5;
+    font-style: italic;
+    position: absolute;
+    left: 300px;
+    bottom: 3px;
 }
 
 form{

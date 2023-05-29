@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>Yoxane - Contact</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
-    <link rel= "stylesheet" href="..\css\style_contact.css ">
-    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    <link rel= "stylesheet" href="../css/style_contact.css">
+    <link type="text/css" rel= "stylesheet" href="../css/style_all_pages.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="..\js\contact.js"></script>
+    <script src="../js/contact.js"></script>
   </head>
   <body>
     <header class="header">
@@ -83,17 +83,18 @@
           </div>
             <div class="contact_form">
               <form>
-                <h1 class="title">Contact Us</h1>
+                  <h1 class="title">Contact Us</h1>
+
                 <div class="input_field">
                   <input type="text" name="name" class="input">
-                  <label for="">Username</label>
+                  <label for="">Username*</label>
                   <!--We put in spam to use it as placeholder above the field-->
-                  <span>Username</span>
+                  <span>Username*</span>
                 </div>
                 <div class="input_field">
                   <input type="email" name="email" class="input">
-                  <label for="">Email</label>
-                  <span>Email</span>
+                  <label for="">Email*</label>
+                  <span>Email*</span>
                 </div>
                 <div class="input_field">
                   <input type="tel" name="phone" class="input">
@@ -101,7 +102,7 @@
                   <span>Phone</span>
                 </div>
                 <div class="input_field_reason">
-                  <label for="">Reason</label>
+                  <label for="">Reason*</label>
                   <select name="reason" id="reason_select">
                       <option value="">--Please choose an option--</option>
                       <option value="commissions">Commissions Inquiry</option>
@@ -111,16 +112,27 @@
                 </div>
                 <div class="input_field_big_textArea">
                   <textarea name="message" class="input"></textarea>
-                  <label for="">Message</label>
-                  <span>Message</span>
+                  <label for="">Message*</label>
+                  <span>Message*</span>
                 </div>
-                
                   <input type="submit" value="Send Message" class="submit_button">
+                  <p class="required_field">* required fields</h1>
+                  <div class="popup_message">
+                    <img src="../img/Contact/tick.png">
+                    <h2>Message Sent!</h2>
+                    <p>Your message has been successfully sent to Roxane & Yoke. 
+                      Thanks.
+                    </p>
+                    <button type="button" onclick="popupDisappears()">OK</button>
+                  </div>
+
               </form>
             </div>
         </div>
       </div>
+      
     </section>
+
 
 
     <footer class="footer">
@@ -130,5 +142,20 @@
       <a class = "footer_contact" href="..\html\Contact.html">Contact</a>
       <a class = "footer_about" href="..\html\About.html">About Us</a>
     </footer>
+    <script>
+            // FUNCTIONALITY: When user clicks "Send Message", a popup appears
+        let popup_box = document.getElementsByClassName("popup_message")[0];
+
+        function popupAppears(event){
+          // To prevent the default refresh of page
+          event.preventDefault();
+
+          popup_box.classList.add("open_popup");
+        }
+        function popupDisappears(){
+          popup_box.classList.remove("open_popup");
+        }
+        
+    </script>
   </body>
 </html>
