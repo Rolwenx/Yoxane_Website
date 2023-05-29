@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>"Yoxane - Contact"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
-    <link rel= "stylesheet" href="..\css\style_accueil.css ">
+    <title>Yoxane - Contact</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
+    <link rel= "stylesheet" href="..\css\style_contact.css ">
     <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <script src="..\js\contact.js"></script>
   </head>
   <body>
     <header class="header">
@@ -27,7 +29,55 @@
       </div>
   </header> 
 
+    <section>
+      <div class="container">
+        <div class="form">
+          <div class="contact_info"></div>
+
+            <div class="contact_form">
+              
+
+              <form>
+                <h1 class="contact_us_title">Contact Us</h1>
+                <div class="input_field">
+                  <input type="text" name="name" class="input">
+                  <label for="">Username</label>
+                  <!--We put in spam to use it as placeholder above the field-->
+                  <span>Username</span>
+                </div>
+                <div class="input_field">
+                  <input type="email" name="email" class="input">
+                  <label for="">Email</label>
+                  <span>Email</span>
+                </div>
+                <div class="input_field">
+                  <input type="tel" name="phone" class="input">
+                  <label for="">Phone</label>
+                  <span>Phone</span>
+                </div>
+                <div class="input_field_reason">
+                  <label for="">Reason</label>
+                  <select name="reason" id="reason_select">
+                      <option value="">--Please choose an option--</option>
+                      <option value="commissions">Commissions Inquiry</option>
+                      <option value="drawing">Drawing Inquiry</option>
+                      <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="input_field_big_textArea">
+                  <textarea name="message" class="input"></textarea>
+                  <label for="">Message</label>
+                  <span>Message</span>
+                </div>
+                
+                  <input type="submit" value="Send" class="submit_button">
+              </form>
+
+            </div>
+        </div>
+      </div>
     </section>
+
 
     <footer class="footer">
       <a class = "footer_home" href="..\html\home.html">Home</a>

@@ -1,0 +1,286 @@
+.container{
+
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    width: 100%;
+    height: 550px;
+    max-width: 820px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px rgb(0,0,0,0.5);
+    display:grid;
+    /* To have the border radius even on the 2 forms*/
+    overflow: hidden;
+    /* to take full width of the grid container, we use fr instead of px*/
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.contact_form{
+    background-color: #5F9EA0;
+    position: relative;
+}
+
+.contact_form:before{
+    content: "";
+    background-color: #5F9EA0;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    top: 100px;
+    left: -20px;
+    border-radius: 50px;
+}
+
+.contact_form:after{
+    content: "";
+    background-color: #5F9EA0;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    bottom: 100px;
+    left: -20px;
+    border-radius: 50px;
+}
+
+/* ---------------------- FORM -------------------------- */
+
+.contact_us_title{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 11.2px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+}
+
+form{
+    padding-top: 10px;
+    padding-left: 25px; 
+}
+
+.input_field{
+    position: relative;
+    /* Define the space between the fields input*/
+    margin: 16px 0;
+}
+
+.input_field_reason{
+    position: relative;
+    /* Define the space between the fields input*/
+    margin: 16px 0;
+    padding-left: 5px;
+}
+
+.input{
+    border: 1px solid white;
+    width: 80%;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    /* We use padding to increase the size of the field*/
+    padding: 9px 18px;
+    background-color: transparent;
+    /* Remove the outline applying when selecting a field*/
+    outline: none;
+    letter-spacing: 0.8px;
+    transition: 0.5s;
+    color: white;
+}
+
+textarea.input{
+    resize: none;
+    padding: 12px 18px;
+    min-height: 145px;
+    border-radius: 13px;
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.4px;
+    transition: 0.5s;
+    font-size: 0.95rem;
+}
+
+/* Class to define the label inside the field*/
+.input_field label{
+    color: white;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input_field_reason label{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+/* Class to define the label of the message fiel inside*/
+.input_field_big_textArea label{
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    bottom: 209.5px;
+    left: 40px;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.input_field_reason select {
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 0.95rem;
+    outline: none;
+    color: #5F9EA0;
+    position: relative;
+    left: 8px;
+  }
+
+  
+.submit_button{
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #5F9EA0;
+    line-height: 1;
+    transition: 0.5s;
+    /*Increase size of box*/
+    padding: 8px 18px;
+    position: relative;
+    bottom: -20px;
+}
+
+.submit_button:hover{
+    background-color: transparent;
+    color: white;
+}
+
+/* -------- FORM - Placeholder above field ----------------- 
+From Here, we are trying to put blocks space for the labels of our forms, 
+*/
+
+.input_field span {
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    /* We only want the text to be seen when we're selecting
+    the field (to be done in Javascript)*/
+  color: transparent;
+    /* Since span is still an input field, we have the pointer for
+    writing on a field so we remove it*/
+    pointer-events: none;
+    padding-left: 0 0.4rem;
+    position: absolute;
+    left: 25px;
+    top:0;
+    transform: translateY(-50%);
+    z-index: 500;
+    height: 18px;
+}
+.input_field span:before, .input_field span:after{
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    height:5px;
+    /* We hide them because we only want to
+    display them with our javascript code*/
+    opacity: 0;
+    width: 10%;
+    transition: 0.3s;
+    background-color: #5F9EA0;
+
+}
+
+.input_field span:before{
+    left: 50%;
+}.input_field span:after{
+    right: 50%;
+}
+
+/* Same for the message input*/
+.input_field_big_textArea span {
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    color: transparent;
+    pointer-events: none;
+    padding-left: 0 0.4rem;
+    position: absolute;
+    left: 50px;
+    bottom: 242px;
+    transform: translateY(-50%);
+    z-index: 500;
+    height: 18px;
+}
+.input_field_big_textArea span:before, .input_field_big_textArea span:after{
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    height:5px;
+    width: 10%;
+    background-color: #5F9EA0;
+    opacity: 0;
+    transition: 0.3s;
+}
+.input_field_big_textArea span:before{
+    left: 50%;
+}
+.input_field_big_textArea span:after{
+    right: 50%;
+}
+
+
+/* We move the label of the input above the span element,
+then show the before/after when the user is selecting(focused) the field*/
+
+.input_field.focus label{
+    top: 0;
+    left: 19px;
+    font-size: 0.8rem;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.input_field.focus span:before, 
+.input_field.focus span:after{
+    opacity: 1;
+    width: 55%;
+}
+/*Same for message*/
+.input_field_big_textArea.focus label{
+    bottom: 240px;
+    left: 44px;
+    font-size: 0.8rem;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.input_field_big_textArea.focus span:before, 
+.input_field_big_textArea.focus span:after{
+    opacity: 1;
+    width: 55%;
+}

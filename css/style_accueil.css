@@ -2,6 +2,13 @@ h1{
     text-align: center;
 }
 
+.accueil_buy_phrase{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:  #FFDB58;
+    text-shadow: 1px 1px 6px black;
+    font-size: 50px;
+}
 .container { /*tableau contenant les images de présentation*/
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,400px));
