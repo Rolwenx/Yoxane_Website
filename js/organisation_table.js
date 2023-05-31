@@ -1,31 +1,32 @@
 // Get all images in the table
 function selection_rox(){
-  const images = document.querySelectorAll('#img_container img');
+  const images = document.querySelectorAll('.image-container img');
+
   images.forEach(img => {
       if (!img.classList.contains('roxane')) {
-      img.parentElement.style.display = 'none';
+        img.closest('.image-container').style.display = 'none';
       } else {
-      img.parentElement.style.display = 'grid';
+        img.closest('.image-container').style.display = 'grid';
       }
   });
   };
 
 
 function selection_all(){
-const container = document.querySelector('#img_container');
+const container = document.querySelector('.image-container').parentElement; 
 const images = container.querySelectorAll('img');
 images.forEach(img => {
-  img.parentElement.style.display = 'grid';
+  img.closest('.image-container').style.display = 'grid';
 });
 }
 
 function selection_yo(){
-  const images = document.querySelectorAll('#img_container img');
+  const images = document.querySelectorAll('.image-container img');
   images.forEach(img => {
       if (!img.classList.contains('yoke')) {
-      img.parentElement.style.display = 'none';
+        img.closest('.image-container').style.display = 'none';
       } else {
-      img.parentElement.style.display = 'grid';
+        img.closest('.image-container').style.display = 'grid';
       }
   });
 };
@@ -87,13 +88,14 @@ updateTotalPrice()
 
 
 function addCartClicked(event) {
-var button = event.target;
-var shopProducts = button.parentElement;
-var title = shopProducts.getElementsByClassName('title-drawing')[0].innerText;
-var price =shopProducts.getElementsByClassName('price')[0].innerText;
-var ProductImage = shopProducts.getElementsByClassName("dessin")[0].src;
-addDrawing(title, ProductImage, price);
+  var button = event.target;
+  var shopProducts = button.closest('.image-container');
+  var title = shopProducts.getElementsByClassName('title-drawing')[0].innerText;
+  var price = shopProducts.getElementsByClassName('price')[0].innerText;
+  var ProductImage = shopProducts.getElementsByClassName('dessin')[0].src;
+  addDrawing(title, ProductImage, price);
 }
+
 
 function addDrawing(title, ProductImage,price) {
 var cartShopBox = document.createElement("div");  //create a new element 
@@ -190,103 +192,103 @@ function verif_cart(){
 
 let commandCount = 1; // Keep track of the number of commands
 function buy() {
-let form = document.querySelector('.form_order form');
-if (!form) {
-  form = createForm();
-}
-Open_form();
-
-let cartContent = document.querySelector(".cart-content");
-let cartItems = cartContent.querySelectorAll(".cart-box");
-let pastOrders = [];
-cartItems.forEach(function (item) {
-  let title = item.querySelector('.cart-product-title').textContent;
-  let price = item.querySelector('.price-cart').dataset.price;
-  let quantity = item.querySelector('.cart-quantity-input').value;
-  let imageSrc = item.querySelector('.cart-img').src;
-  pastOrders.push({title, price, quantity, imageSrc});
-});
-
-let list = document.createElement('ul');
-list.style.display = "none";
-pastOrders.forEach(function (order) {
-  let li = document.createElement('li');
-  li.innerHTML = `
-    <img src="${order.imageSrc}" alt="${order.title}" width="50" height="50"><br>
-    <span>${order.title}; </span>
-    <span>Price : ${order.price}; </span>
-    <span>Quantity : ${order.quantity}</span><br>
-  `;
-  list.appendChild(li);
-});
-
-  // Add a submit event listener to the form
-  form.addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  // Get the values of the form fields
-  let nom = document.querySelector('#nom').value;
-  let prenom = document.querySelector('#prenom').value;
-  let telephone = document.querySelector('#telephone').value;
-  let email = document.querySelector('#email').value;
-  
-
-  if (!nom || !prenom || !telephone || !email) {
-    alert('Please fill in all the fields.');
-    return;
+  let form = document.querySelector('.form_order form');
+  if (!form) {
+    form = createForm();
   }
-  // Validate the telephone number
-  if (/[a-zA-Z]/.test(telephone)) {
-    alert('Invalid telephone number. The number must not contain any letters.');
-    return;
-  }
-  if (!/^0[167]\d{8}$/.test(telephone)) {
-    alert('Invalid telephone number. The number must start with 06, 07 or 01 and contain a total of 10 digits.');
-    return;
-  }
-  if (!/@gmail\.com$|@yopmail\.com$|@yahoo\.fr$|@hotmail\.fr$|@outlook\.com$/.test(email)) {
-    alert('Invalid email. The email must be a Gmail, Yopmail, Yahoo, Hotmail or Outlook address.');
-    return;
-  }
+  Open_form();
 
-  
-  // Create a new element to display the coordinates
-  let coordinatesElement = document.createElement('div');
-  coordinatesElement.innerHTML = `
-  My data : <br>
-    Nom: ${nom}; 
-    <br>Prénom: ${prenom};
-    <br>Téléphone: ${telephone};
-    <br>Email: ${email}
-  `;
-    list.appendChild(coordinatesElement);
+  let cartContent = document.querySelector(".cart-content");
+  let cartItems = cartContent.querySelectorAll(".cart-box");
+  let pastOrders = [];
+  cartItems.forEach(function (item) {
+    let title = item.querySelector('.cart-product-title').textContent;
+    let price = item.querySelector('.price-cart').dataset.price;
+    let quantity = item.querySelector('.cart-quantity-input').value;
+    let imageSrc = item.querySelector('.cart-img').src;
+    pastOrders.push({title, price, quantity, imageSrc});
+  });
 
-    while (cartContent.hasChildNodes()) {
-      cartContent.removeChild(cartContent.firstChild);
-  }
-  updateTotalPrice();
-  Quit_form()
-});
- 
-// Get the cart element and the list of old command
-let oldCommands = document.querySelector(".older_orders");
-  let newCommand = document.createElement("li");
-  newCommand.setAttribute('data-command-id', commandCount);
-  let commandText = document.createElement("span");
-  commandText.classList.add("Command_number")
-  commandText.textContent = "Command " + commandCount;
-  newCommand.appendChild(commandText);
-  newCommand.appendChild(list);
-  newCommand.addEventListener("click", function() {
-    if (list.style.display === "none") {
-        list.style.display = "block";
-    } else {
-        list.style.display = "none";
+  let list = document.createElement('ul');
+  list.style.display = "none";
+  pastOrders.forEach(function (order) {
+    let li = document.createElement('li');
+    li.innerHTML = `
+      <img src="${order.imageSrc}" alt="${order.title}" width="50" height="50"><br>
+      <span>${order.title}; </span>
+      <span>Price : ${order.price}; </span>
+      <span>Quantity : ${order.quantity}</span><br>
+    `;
+    list.appendChild(li);
+  });
+
+    // Add a submit event listener to the form
+    form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get the values of the form fields
+    let nom = document.querySelector('#nom').value;
+    let prenom = document.querySelector('#prenom').value;
+    let telephone = document.querySelector('#telephone').value;
+    let email = document.querySelector('#email').value;
+    
+
+    if (!nom || !prenom || !telephone || !email) {
+      alert('Please fill in all the fields.');
+      return;
     }
-});
-commandCount++;
-oldCommands.appendChild(newCommand);
-updateTotalPrice();
+    // Validate the telephone number
+    if (/[a-zA-Z]/.test(telephone)) {
+      alert('Invalid telephone number. The number must not contain any letters.');
+      return;
+    }
+    if (!/^0[167]\d{8}$/.test(telephone)) {
+      alert('Invalid telephone number. The number must start with 06, 07 or 01 and contain a total of 10 digits.');
+      return;
+    }
+    if (!/@gmail\.com$|@yopmail\.com$|@yahoo\.fr$|@hotmail\.fr$|@outlook\.com$/.test(email)) {
+      alert('Invalid email. The email must be a Gmail, Yopmail, Yahoo, Hotmail or Outlook address.');
+      return;
+    }
+
+    
+    // Create a new element to display the coordinates
+    let coordinatesElement = document.createElement('div');
+    coordinatesElement.innerHTML = `
+    My data : <br>
+      Nom: ${nom}; 
+      <br>Prénom: ${prenom};
+      <br>Téléphone: ${telephone};
+      <br>Email: ${email}
+    `;
+      list.appendChild(coordinatesElement);
+
+      while (cartContent.hasChildNodes()) {
+        cartContent.removeChild(cartContent.firstChild);
+    }
+    updateTotalPrice();
+    Submit_form()
+  });
+  
+  // Get the cart element and the list of old command
+  let oldCommands = document.querySelector(".older_orders");
+    let newCommand = document.createElement("li");
+    newCommand.setAttribute('data-command-id', commandCount);
+    let commandText = document.createElement("span");
+    commandText.classList.add("Command_number")
+    commandText.textContent = "Command " + commandCount;
+    newCommand.appendChild(commandText);
+    newCommand.appendChild(list);
+    newCommand.addEventListener("click", function() {
+      if (list.style.display === "none") {
+          list.style.display = "block";
+      } else {
+          list.style.display = "none";
+      }
+  });
+  commandCount++;
+  oldCommands.appendChild(newCommand);
+  updateTotalPrice();
 
 }
 
@@ -385,5 +387,24 @@ let oldCommands = document.querySelector(".older_orders");
 // Add the class 'active' to the .cart element
 form.classList.remove("active");
 }
+
+function Submit_form() {
+  console.log("haha")
+  // Get the .cart element
+  let form = document.querySelector(".form_order");
+  document.querySelector('#nom').value = "";
+  document.querySelector('#prenom').value = "";
+  document.querySelector('#telephone').value = "";
+  document.querySelector('#email').value = "";
+  
+  // Add the class 'active' to the .cart element
+  form.classList.remove("active");
+}
+
+
+// Get all the show buttons
+
+
+
 
 

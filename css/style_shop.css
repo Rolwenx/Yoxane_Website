@@ -85,6 +85,9 @@ cursor: pointer;
 }
 
 
+
+
+
 .cart{
     position:fixed;
     top:0;
@@ -186,8 +189,8 @@ cursor: pointer;
     flex-direction: column;
     position: relative;
     justify-content: center; /* center the content vertically */
-    align-items: center;
-    padding: 30px;  
+    align-items: center; 
+    padding:30px;
     border: 1px solid white; /* add a black border on hover */ 
     background-color: white;
 
@@ -198,6 +201,7 @@ cursor: pointer;
     width: 300px;
     height: 300px; /* set a fixed height for the images */
     object-fit: cover;
+    display: inline-block;
 
 
 }
@@ -209,20 +213,36 @@ cursor: pointer;
 
 .image-container:hover {
     border: 1px solid white; /* add a black border on hover */
-    /*transform: scale(1.1); /* make the element grow in size on hover */
+    transform: scale(1.1); /* make the element grow in size on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.add-cart{
-    position:absolute;
-    bottom :0;
-    right: 0;
+.icon {
+    position: absolute;
+    bottom: 0;
+    opacity:0;
+    width: 100%;
+    text-align: center;
+    display: flex;
     background-color: white;
-    padding:10px;
-    cursor: pointer;
-    opacity: 0;
 }
 
-.image-container:hover .add-cart{
+.add-icon,
+.show-icon {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+
+
+.show, .add-cart{
+    font-size: 40px;
+}
+
+
+
+.image-container:hover .icon{
     opacity: 1;
     cursor: pointer;
 }
@@ -326,4 +346,30 @@ cursor: pointer;
     resize: vertical;
     resize: none;
 }
+
+.img-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.15);
+  }
+  
+  .big-image {
+    display: block;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: aliceblue;
+    font-size: 120px;
+  }
+  
+  
+  
+  
+  
 

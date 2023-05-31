@@ -68,39 +68,78 @@
     
     <section class="container" id="img_container">
       <div class="image-container">
-        <img src="..\img\roxane_dessin.jpg" alt="Image 1">
-        <i class='bx bx-shopping-bag add-cart'></i>
+        <div style="position: relative;">
+          <img src="..\img\roxane_dessin.jpg" alt="Image 1">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
         <h2 class="title-drawing">Drawing 1.</h2>
         <span class ="price">2€</span>
       </div>
       <div class="image-container">
-        <img src="..\img\yoke_dessin.jpg" alt="Image 2">
-        <i class='bx bx-shopping-bag add-cart'></i>
+        <div style="position: relative;">
+          <img src="..\img\roxane_dessin.jpg" alt="Image 2">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
         <h2 class="title-drawing">Drawing 2.</h2>
         <span class ="price">2€</span>
       </div>
       <div class="image-container">
-        <img src="..\img\roxane_dessin.jpg" alt="Image 3">
-        <i class='bx bx-shopping-bag add-cart'></i>
+        <div style="position: relative;">
+          <img src="..\img\roxane_fanart.jpg" alt="Image 3">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
         <h2 class="title-drawing">Drawing 3.</h2>
         <span class ="price">2€</span>
       </div>
       <div class="image-container">
-        <img src="..\img\roxane_fanart.jpg" alt="Image 4">
-        <i class='bx bx-shopping-bag add-cart'></i>
+        <div style="position: relative;">
+          <img src="..\img\roxane_dessin.jpg" alt="Image 4">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
         <h2 class="title-drawing">Drawing 4.</h2>
         <span class ="price">2€</span>
       </div>
       <div class="image-container">
-        <img src="..\img\yoke_dessin.jpg" alt="Image 5">
-        <i class='bx bx-shopping-bag add-cart'></i>
+        <div style="position: relative;">
+          <img src="..\img\yoke_dessin.jpg" alt="Image 5">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
         <h2 class="title-drawing">Drawing 5.</h2>
-        <span class ="price">2€</span>
-      </div>
-      <div class="image-container">
-        <img src="..\img\roxane_dessin.jpg" alt="Image 6">
-        <i class='bx bx-shopping-bag add-cart'></i>
-        <h2 class="title-drawing">Drawing 6.</h2>
         <span class ="price">2€</span>
       </div>
     </section>
@@ -123,17 +162,50 @@
 
         // Get the value of the 'selection' query parameter from the URL
         const urlhome = new URLSearchParams(window.location.search); //allow to search for the string in the url
-        const selection = urlhome.get('selection'); //Allow to get the value of the selection string
-
-        // Check if a selection was specified in the URL
-        if (selection) {
+        const selection_home = urlhome.get('selection'); //Allow to get the value of the selection string
+        if (selection_home) {
           // Call the appropriate function to select the specified option
-          if (selection === 'enaxor') {
+          if (selection_home === 'enaxor') {
             selection_rox();
-          } else if (selection === 'nolwen') {
+          } else if (selection_home === 'nolwen') {
             selection_yo();
           }
+          else {
+            
+          }
         }
+
+
+
+
+        const showIcons = document.querySelectorAll('.show-icon');
+
+        showIcons.forEach(icon => {
+          icon.addEventListener('click', event => {
+            const imgContainer = event.target.closest('.image-container');
+            const imgSrc = imgContainer.querySelector('img').src;
+            const bigImg = document.createElement('img');
+            bigImg.src = imgSrc;
+            bigImg.classList.add('big-image');
+
+            const closeIcon = document.createElement('i');
+            closeIcon.classList.add('bx', 'bx-x', 'close-icon');
+
+            const imgWrapper = document.createElement('div');
+            imgWrapper.classList.add('img-wrapper');
+            imgWrapper.appendChild(bigImg);
+            imgWrapper.appendChild(closeIcon);
+            document.body.appendChild(imgWrapper);
+
+            closeIcon.addEventListener('click', () => {
+              imgWrapper.remove();
+            });
+          });
+        });
+
+
+
+
         </script>
             <script src="..\js\organisation_table.js"></script>
 
