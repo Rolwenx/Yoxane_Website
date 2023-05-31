@@ -55,16 +55,18 @@
       <div class="cart-content"></div>
       <section>
         <fieldset class="bouton_buy-cart">
-            <button type="button" onclick="buy()">BUY</button>
+            <button type="button" onclick="verif_cart()">BUY</button>
       </fieldset>
       </section>
     <i class='bx bx-x' id="quit_cart" onclick="Quit()"></i>
     </DIV>
-    <div class="form_order"></div>  
+    <div class="form_order">
+      <i class='bx bx-x' id="quit_form" onclick="Quit_form()"></i>
+    </div>  
 
 
     
-    <div class="container" id="img_container">
+    <section class="container" id="img_container">
       <div class="image-container">
         <img src="..\img\roxane_dessin.jpg" alt="Image 1">
         <i class='bx bx-shopping-bag add-cart'></i>
@@ -101,7 +103,7 @@
         <h2 class="title-drawing">Drawing 6.</h2>
         <span class ="price">2€</span>
       </div>
-    </div>
+    </section>
 
         <script>
           // Get all images in the table

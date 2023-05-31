@@ -144,27 +144,33 @@
             
             <div class="content">
               <div class="form">
-                <form>
+                <form name="commission_form" id="commission_form">
                   <label for="">Username*</label>
-                  <input type="text" name="username" class="input" placeholder="Name..">
-                  		
+                  <input id="username" type="text" name="username" class="input" placeholder="Name..">
+  
                   <label for="">Email*</label>
-                  <input type="mail" name="email" class="input" placeholder="Email..">
+                  <input id="email" type="mail" name="email" class="input" placeholder="Email..">
 
                   <div class="input_field_type">
                   <label for="">Type of Commission*</label>
-                  <select name="type" id="reason_select">
+                  <select name="type" id="type_select">
                     <option value="">--Please choose an option--</option>
-                    <option value="commissions">Traditional</option>
-                    <option value="drawing">Painting</option>
-                    <option value="other">Sketch</option>
-                    <option value="other">Full Digital</option>
+                    <option value="Traditional">Traditional</option>
+                    <option value="Painting">Painting</option>
+                    <option value="Sketch">Sketch</option>
+                    <option value="Full Digital">Full Digital</option>
+                  </select>
+                  <label for="">Wanted Artist *</label>
+                  <select name="type_artist" id="artist_select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Enaxor">Enaxor</option>
+                    <option value="Yoke">Yoke</option>
                   </select>
                   </div>
 
                     <div class="input_field_big_text">
-                      <label for="">Details about order*</label>
-                      <textarea name="message" class="input" placeholder="Details about order.."></textarea>
+                      <label for="">Details about order* (1000 char max)</label>
+                      <textarea id="details_order" name="message" class="input" placeholder="Details about order.."></textarea>
                     </div>
                   <input class="submit_form" type="submit" value="Submit">
                   
@@ -175,13 +181,32 @@
         </div>
     
         <div class="outside_field">
+          <h1 class="header_title">Table of Commissions</h1>
+          <p>Our current commissions. If your commissions doesn't appear, go to contact us page. </p>
+        </div>
+
+        <div class="commissions_table_div">
+          <table id="commissions_table" style = "width:1400px">
+            <thead class="commissions_table_thead">
+                <tr>
+                <th>Artist</th>
+                <th>Username</th>
+                <th>Commission date</th>
+                <th>Email</th>
+                <th>Type of commission</th>
+                <th>Details about order</th>
+                </tr>
+      
+            </thead>
+          </table>
+        </div>
+
+
+        <div class="outside_field">
           <h1 class="header_title">Table of Price</h1>
           <p>See our prices in full details! Come on, don't be cheap!</p>
         </div>
 
-        <div class="table">
-
-        </div>
       </div>
     </section>
 

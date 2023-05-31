@@ -113,7 +113,7 @@ var cartBoxContent = `
 <img src="${ProductImage}" alt="Image 1" class="cart-img"> 
 <div class="detail-box">
 <div class="cart-product-title">${title}</div>
-<span class="price" data-price="${price}">${price}</span>
+<span class="price-cart" data-price="${price}">${price}</span>
 <input class="cart-quantity-input" type="number" value="1">
 </div>
 <i class='bx bxs-trash-alt remove'></i>`;
@@ -128,7 +128,7 @@ cartShopBox.getElementsByClassName("remove")[0].addEventListener("click", remove
 
 function quantityChanged(event) {
 var input = event.target;
-var priceElement = input.parentElement.getElementsByClassName("price")[0];
+var priceElement = input.parentElement.getElementsByClassName("price-cart")[0];
 var price = parseFloat(priceElement.getAttribute("data-price").replace("€", ""));
 var quantity = input.value;
 var total = price * quantity;
@@ -142,7 +142,7 @@ var total = 0;
 var cartItems = document.getElementsByClassName('cart-content')[0].getElementsByClassName('cart-box');
 console.log(cartItems)
 for (var i = 0; i < cartItems.length; i++) {
-  var priceElement = cartItems[i].querySelector('.price');
+  var priceElement = cartItems[i].querySelector('.price-cart');
   console.log(priceElement)
   var quantityElement = cartItems[i].querySelector('.cart-quantity-input');
   var price = parseFloat(priceElement.dataset.price);
@@ -172,7 +172,23 @@ console.log(order)
 order.classList.remove("active");
 }
 
-let commandCount = 0; // Keep track of the number of commands
+
+function verif_cart(){
+  var cartItems = document.getElementsByClassName('cart-content')[0].getElementsByClassName('cart-box');
+  console.log(cartItems.length)
+  if(cartItems.length==0){
+    alert("Your cart is empty");
+    return;
+  }
+  else {
+    buy();
+  }
+
+}
+
+
+
+let commandCount = 1; // Keep track of the number of commands
 function buy() {
 let form = document.querySelector('.form_order form');
 if (!form) {
@@ -181,21 +197,27 @@ if (!form) {
 Open_form();
 
 let cartContent = document.querySelector(".cart-content");
-
-let titles = [];
-let titleElements = document.querySelectorAll('.cart-product-title');
-titleElements.forEach(function (element) {
-    titles.push(element.textContent);
+let cartItems = cartContent.querySelectorAll(".cart-box");
+let pastOrders = [];
+cartItems.forEach(function (item) {
+  let title = item.querySelector('.cart-product-title').textContent;
+  let price = item.querySelector('.price-cart').dataset.price;
+  let quantity = item.querySelector('.cart-quantity-input').value;
+  let imageSrc = item.querySelector('.cart-img').src;
+  pastOrders.push({title, price, quantity, imageSrc});
 });
-let pastOrders=titles;
-console.log(pastOrders)
 
 let list = document.createElement('ul');
 list.style.display = "none";
-pastOrders.forEach(function (item) {
-    let li = document.createElement('li');
-    li.textContent = item;
-    list.appendChild(li);
+pastOrders.forEach(function (order) {
+  let li = document.createElement('li');
+  li.innerHTML = `
+    <img src="${order.imageSrc}" alt="${order.title}" width="50" height="50"><br>
+    <span>${order.title}; </span>
+    <span>Price : ${order.price}; </span>
+    <span>Quantity : ${order.quantity}</span><br>
+  `;
+  list.appendChild(li);
 });
 
   // Add a submit event listener to the form
@@ -233,9 +255,9 @@ pastOrders.forEach(function (item) {
   coordinatesElement.innerHTML = `
   My data : <br>
     Nom: ${nom}; 
-    Prénom: ${prenom};
-    Téléphone: ${telephone};
-    Email: ${email}
+    <br>Prénom: ${prenom};
+    <br>Téléphone: ${telephone};
+    <br>Email: ${email}
   `;
     list.appendChild(coordinatesElement);
 
@@ -243,13 +265,15 @@ pastOrders.forEach(function (item) {
       cartContent.removeChild(cartContent.firstChild);
   }
   updateTotalPrice();
-  Close_form()
+  Quit_form()
 });
  
 // Get the cart element and the list of old command
 let oldCommands = document.querySelector(".older_orders");
   let newCommand = document.createElement("li");
+  newCommand.setAttribute('data-command-id', commandCount);
   let commandText = document.createElement("span");
+  commandText.classList.add("Command_number")
   commandText.textContent = "Command " + commandCount;
   newCommand.appendChild(commandText);
   newCommand.appendChild(list);
@@ -263,12 +287,18 @@ let oldCommands = document.querySelector(".older_orders");
 commandCount++;
 oldCommands.appendChild(newCommand);
 updateTotalPrice();
+
 }
 
 //create the form 
 function createForm() {
 let formbox = document.getElementsByClassName('form_order')[0];
+let form_container = document.createElement('form_container');
 let form = document.createElement('form');
+
+let labelForm = document.createElement('h2');
+labelForm.textContent = "Enter your informations";
+form_container.appendChild(labelForm)
 
 let labelNom = document.createElement('label');
 labelNom.setAttribute('for', 'nom');
@@ -278,6 +308,7 @@ form.appendChild(labelNom);
 let inputNom = document.createElement('input');
 inputNom.setAttribute('type', 'text');
 inputNom.setAttribute('id', 'nom');
+inputNom.placeholder ="Name..."
 inputNom.setAttribute('name', 'nom');
 form.appendChild(inputNom);
 
@@ -290,6 +321,7 @@ let inputPrenom = document.createElement('input');
 inputPrenom.setAttribute('type', 'text');
 inputPrenom.setAttribute('id', 'prenom');
 inputPrenom.setAttribute('name', 'prenom');
+inputPrenom.placeholder ="Firstname..."
 form.appendChild(inputPrenom);
 
 let labelTelephone = document.createElement('label');
@@ -301,6 +333,7 @@ let inputTelephone = document.createElement('input');
 inputTelephone.setAttribute('type', 'text');
 inputTelephone.setAttribute('id', 'telephone');
 inputTelephone.setAttribute('name', 'telephone');
+inputTelephone.placeholder ="Phone number..."
 form.appendChild(inputTelephone);
 
 let labelEmail = document.createElement('label');
@@ -312,6 +345,7 @@ let inputEmail = document.createElement('input');
 inputEmail.setAttribute('type', 'text');
 inputEmail.setAttribute('id', 'email');
 inputEmail.setAttribute('name', 'email');
+inputEmail.placeholder ="Email..."
 form.appendChild(inputEmail);
 
 let submitButton = document.createElement('input');
@@ -319,9 +353,10 @@ submitButton.setAttribute('type', 'submit');
 submitButton.setAttribute('value', 'Submit');
 form.appendChild(submitButton);
 
-formbox.appendChild(form);
+form_container.appendChild(form)
+formbox.appendChild(form_container);
 
-return form;
+return formbox;
 }
 
 function Open_form() {
@@ -332,10 +367,23 @@ let form = document.querySelector(".form_order");
 form.classList.add("active")
 }
 
-function Close_form() {
+function Quit_form() {
 console.log("haha")
 // Get the .cart element
 let form = document.querySelector(".form_order");
+document.querySelector('#nom').value = "";
+document.querySelector('#prenom').value = "";
+document.querySelector('#telephone').value = "";
+document.querySelector('#email').value = "";
+
+
+let oldCommands = document.querySelector(".older_orders");
+  let commandToRemove = oldCommands.querySelector(`[data-command-id="${commandCount-1}"]`);
+  if (commandToRemove) {
+    oldCommands.removeChild(commandToRemove);
+  }
 // Add the class 'active' to the .cart element
 form.classList.remove("active");
 }
+
+

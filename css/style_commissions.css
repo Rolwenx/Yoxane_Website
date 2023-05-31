@@ -238,7 +238,7 @@
   }
 
 .wrapper {
-    margin: 85px 0 0 550px;
+    margin: 50px 0 0 550px;
 	padding: 20px;
 	background: white;
 	border-radius: 5px;
@@ -314,3 +314,43 @@ textarea{
 	letter-spacing: 3px;
 }
 
+
+/* ----------- TABLE OF COMMISSIONS */
+
+.commissions_table_div{
+    width: 80%;
+    padding-left: 100px;
+    /* To center the table*/
+
+}
+
+#commissions_table{
+    border: 5px solid #D8E0E7;
+    box-shadow: 1px 1px 3px 1px grey;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.commissions_table_thead{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #D8E0E7;
+    border-right: 1px solid #D8E0E7;
+    font-size: 18px;
+    background-color: white;
+}
+
+
+
+td{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #D8E0E7;
+    border-right: 1px solid #D8E0E7;
+    text-align: center;
+}
