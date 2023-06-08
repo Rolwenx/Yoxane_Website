@@ -49,7 +49,7 @@
     border: 0;
     border-radius: 12px;
     box-shadow: 0 3px 5px rgba(0,0,0,0.4);
-    background: #5F9EA0;
+    background: #9966CC;
     cursor: pointer;
     outline: none;
     font-size: 0.95rem;
@@ -76,8 +76,8 @@
     font-family: 'Poppins', sans-serif;
     margin-bottom: 10px;
     text-align: center;
-    color:  #FFDB58;
-    text-shadow: 1px 1px 6px black;
+    color:  #9966CC;
+    text-shadow: 1px 1px 6px #A593E0;
     font-size: 50px;
 }
 
@@ -87,12 +87,11 @@
     font-weight: 800;
     font-size: 18px;
     opacity: 0.8;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 50px;
-    color: white;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
 }
-
-
 
 
 /* ---------------------- CONTACT US FIELD -------------------------- */
@@ -128,13 +127,13 @@
 
 /* ---------------------- CONTACT FORM -------------------------- */
 .contact_form{
-    background-color: #5F9EA0;
+    background-color: #A593E0;
     position: relative;
 }
 
 .contact_form:before{
     content: "";
-    background-color: #5F9EA0;
+    background-color: #A593E0;
     transform: rotate(45deg);
     position: absolute;
     width: 46px;
@@ -146,7 +145,7 @@
 
 .contact_form:after{
     content: "";
-    background-color: #5F9EA0;
+    background-color: #A593E0;
     transform: rotate(45deg);
     position: absolute;
     width: 46px;
@@ -267,7 +266,7 @@ textarea.input{
     background-color: white;
     font-size: 0.95rem;
     outline: none;
-    color: #5F9EA0;
+    color: #A593E0;
     position: relative;
     left: 8px;
   }
@@ -280,7 +279,7 @@ textarea.input{
     outline: none;
     cursor: pointer;
     font-size: 0.95rem;
-    color: #5F9EA0;
+    color: #A593E0;
     line-height: 1;
     transition: 0.5s;
     /*Increase size of box*/
@@ -326,7 +325,7 @@ From Here, we are trying to put blocks space for the labels of our forms,
     opacity: 0;
     width: 10%;
     transition: 0.3s;
-    background-color: #5F9EA0;
+    background-color: #A593E0;
 
 }
 
@@ -357,7 +356,7 @@ From Here, we are trying to put blocks space for the labels of our forms,
     top: 50%;
     height:5px;
     width: 10%;
-    background-color: #5F9EA0;
+    background-color: #A593E0;
     opacity: 0;
     transition: 0.3s;
 }
@@ -403,7 +402,7 @@ then show the before/after when the user is selecting(focused) the field*/
 /* --------------- OUR CONTACT INFO -------------------------- */
 
 .contact_info .title{
-    color: #5F9EA0;
+    color: #A593E0;
 }
 
 .text{
@@ -443,14 +442,14 @@ then show the before/after when the user is selecting(focused) the field*/
 /* Connect with ____*/
 .social_media h3 {
     font-family: 'Poppins', sans-serif;
-    color: rgb(62, 57, 57);
+    color: white;
     font-size: 15px;
     font-weight: 800;
-    background-color: #91dce0;
+    background-color: #9966CC;
     opacity: 0.9;
     box-shadow: 0 0 2px 0 black;
     border-radius: 10px;
-    width: 170px;
+    width: 175px;
     text-align: center;
 }
 
@@ -464,12 +463,13 @@ then show the before/after when the user is selecting(focused) the field*/
     width: 35px;
     height:35px;
     border-radius: 20px;
-    background: linear-gradient(45deg, #5F9EA0, #98dcdf);
+    background: linear-gradient(45deg, #A593E0, #9966CC);
     color: white;
     text-align: center;
     line-height: 35px;
     margin-right: 0.5rem;
     transition: 0.3s;
+    margin-bottom: 12px;
 }
 
 .social_media_icons a:hover{
@@ -483,7 +483,7 @@ then show the before/after when the user is selecting(focused) the field*/
     position: absolute;
     width: 170px;
     height: 175px;
-    border: 22px solid #5F9EA0;
+    border: 22px solid #A593E0;
     border-radius: 50%;
     bottom: -77px;
     right: 50px;
@@ -495,7 +495,7 @@ then show the before/after when the user is selecting(focused) the field*/
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: linear-gradient(0.25turn,white,#98dcdf);
+    background: linear-gradient(0.25turn,white,#9966CC);
     bottom: 46%;
     right: 50%;
     transform: translate(-40%,38%);

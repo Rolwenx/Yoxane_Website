@@ -1,14 +1,23 @@
-h1{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.outside_field{
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+.outside_field h1{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
     text-align: center;
+    color:  #9966CC;
+    text-shadow: 1px 1px 6px #A593E0;
+    font-size: 50px;
+    
 }
 
-.accueil_buy_phrase{
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:  #FFDB58;
-    text-shadow: 1px 1px 6px black;
-    font-size: 50px;
-}
+/* FIRST SECTION OF HOME : Advise to buy*/
 .container { /*tableau contenant les images de présentation*/
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,400px));
@@ -49,6 +58,7 @@ h1{
   
 .text {
     color: white;
+    font-weight: 600;
     font-size: 40px; /*change la taille du texte dans les image prez*/
     position: absolute;
     top: 50%;
@@ -70,18 +80,28 @@ h1{
     display: flex;
     padding-top: 20px;
     text-decoration: none;
+    padding-bottom: 20px;
 }
 
 .buy-button {
-    height: 50px;
-    width: 150px;
-    font-size: 20px;
 
     margin: 0 auto;
+
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    background-color: #A593E0;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 9px #A593E0;
+    padding: 20px 26px 10px;
+
   }
-.bouton_buy button:active {
-    filter: brightness(-54%);
 
+
+  .buy-button:hover{
+    background-color: #9966CC;
 }
-
-  

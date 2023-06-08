@@ -4,31 +4,56 @@
     <title>Yoxane - Commissions</title> 
     <link rel= "stylesheet" href="../css/style_commissions.css">
     <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <script src="../js/commissions.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../json/commissions_storage.json"></script>
   </head>
   <body>
-    <header class="header">
+    <header>
       <nav class="nav_bar">
-        <div id="menu_home">
-          <ul>
-              <li class="site_title"><a href="#">YOXANE</a></li>
-              <li><a href="..\html\home.html">Home</a></li>
-              <li><a href="..\html\Shop.html">Shop</a></li>
-              <li><a href="..\html\commissions.html">Commisions </a></li>
-              <li><a href="..\html\contact.html">Contact</a></li>
-              <li><a href="..\html\about.html">About us</a></li>
+        <div id="logo">YOXANE</div>
+          <ul class="elements_of_navbar">
+            <li class="nav"><a href="..\html\home.html">Home</a></li>
+            <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
+            <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
+            <li class="nav"><a href="..\html\contact.html">Contact</a></li>
+            <li class="nav"><a href="..\html\about.html">About us</a></li>
           </ul>
-        </div>
       </nav>
-      <div>
-          <img class= "header_img" src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
-          <div class="Container_Home_Quote">
-            <div class="Home_quote">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
-            </div>
-      </div>
   </header> 
+  <section>
+    <div class="social_icons">
+      <a href="https://www.instagram.com/artsydumpt/"><i class="fa fa-instagram"><span class="icon_text">Yoke</span></i><br></a>
+      <a href="https://www.instagram.com/enx.or/"><i class="fa fa-instagram"><span class="icon_text">Roxane</span></i><br></a>
+    </div>
+    <div class="wrapper">
+      <div>
+        <span class="welcome_text">Welcome</span>
+        <h1>We're <span class="artist_text">Artists</span></h1>
+        <p>We're a group of 2 friends, motivated by a common passion for drawings.
+          We've decided to start our small business together, in which we will firstly sell our drawings,
+          but also take commissions from you guys. We're happy to start this journey with you.
+        </p>
+        <div class="header_buttons">
+          <a href="..\html\commissions.html">
+            <button class="button">Make a commission</button>
+          </a>
+          <a href="..\html\Shop.html">
+            <button class="button">Buy Now</button>
+          </a>
+        </div>
+      </div>
 
+      <!--Now we take care of the splash and the image-->
+      <div>
+        <div class="splash_box">
+          <img src="..\img\Home\splash_custom.png" id="splash">
+          <img src="..\img\Home\header.png">
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <div class="separation_div"></div>
     <section>
       <div>
         <div class="outside_field">
@@ -38,14 +63,14 @@
         <div class="upper_commissions">
           <div class="first_box">
               <div class="front_content">
-                <img class="upper_img" src="../img/Commissions/box_traditional_drawing.jpeg" alt="Commission Tradition Drawing">
+                <img class="upper_img" src="../img/Commissions/box_traditional.jpeg" alt="Commission Tradition Drawing">
                 <div class="text_overlay">
                   <h1 class="upper_title">Traditional</h1>
                   <div class="text_over_image">
-                    <p>Face: 10 €</p>
-                    <p>Halfbody: 15€</p>
-                    <p>Fullbody: 20€</p>
-                    <p>Landscape: 20€</p>
+                    <p>Portrait: 20 €</p>
+                    <p>Halfbody: 15 €</p>
+                    <p>Fullbody: 16 €</p>
+                    <p>Scenery: 20 €</p>
                     <input type="submit" id="openPopup" value="Make a commission" class="commission_button" data-popup="popup1">
                   </div>
                 </div>
@@ -59,8 +84,9 @@
                 <h1 class="upper_title">Painting</h1>
                 <div class="text_over_image">
                   <p>Portrait: 25 €</p>
-                  <p>Landscape: 30€</p>
-                  <p>Face: 20€</p>
+                    <p>Halfbody: 15 €</p>
+                    <p>Fullbody: 10 €</p>
+                    <p>Scenery: 30 €</p>
                   <input type="submit" id="openPopup2" value="Make a commission" class="commission_button" data-popup="popup2">
                 </div>
               </div>
@@ -74,10 +100,10 @@
               <div class="text_overlay">
                 <h1 class="upper_title">Sketch</h1>
                 <div class="text_over_image">
-                  <p>Face: 10 €</p>
-                  <p>Halfbody: 15€</p>
-                  <p>Fullbody: 20€</p>
-                  <p>Landscape: 20€</p>
+                  <p>Face: 5 €</p>
+                  <p>Halfbody: 8 €</p>
+                  <p>Fullbody: 10 €</p>
+                  <p>Scenery: 15 €</p>
                   <input type="submit" id="openPopup3" value="Make a commission" class="commission_button" >
                 </div>
               </div>
@@ -91,9 +117,10 @@
               <div class="text_overlay">
                 <h1 class="upper_title">Line art</h1>
                 <div class="text_over_image">
-                  <p>Face: 10 €</p>
-                  <p>Halfbody: 15€</p>
-                  <p>Fullbody: 20€</p>
+                  <p>Face: 8 €</p>
+                  <p>Halfbody: 10 €</p>
+                  <p>Fullbody: 12 €</p>
+                  <p>Scenery: 15 €</p>
                   <input type="submit" id="openPopup4" value="Make a commission" class="commission_button">
                 </div>
               </div>
@@ -107,9 +134,10 @@
               <div class="text_overlay">
                 <h1 class="upper_title">Full Digital</h1>
                 <div class="text_over_image">
-                  <p>Face: 10 €</p>
-                  <p>Halfbody: 15€</p>
-                  <p>Fullbody: 20€</p>
+                  <p>Face: 25 €</p>
+                  <p>Halfbody: 20 €</p>
+                  <p>Fullbody: 20 €</p>
+                  <p>Scenery: 40 €</p>
                   <input type="submit" id="openPopup5" value="Make a commission" class="commission_button">
                 </div>
               </div>
@@ -128,15 +156,15 @@
             <h1 class="lower_title">Rules</h1>
             <div class="lower_box_text">
               <p>WE DO NOT DO NSFW</p>
-              <p>Extra character on the drawing: +30%</p>
+              <p>2 + CHARACTERS: 5 - 35 €</p>
               <p>Please be tolerant on the time, we are students.</p>
             </div>
           </div>
         </div>
 
         <!--POP UP FORM-->
-        <div class="popup" id="divOne">
-          <div class="wrapper">
+        <div class="popup">
+          <div class="wrapper_popup">
             <div class="popup_header">
               <h2>Make A Commission</h2><a class="closePopup" href="#">&times;</a>
               <p>Please give as much details as possible about your commissions.</p>
@@ -150,6 +178,8 @@
   
                   <label for="">Email*</label>
                   <input id="email" type="mail" name="email" class="input" placeholder="Email..">
+                  <label for="">Deadline*</label>
+                  <input id="date_limit" type="date" name="date_limit" class="input">
 
                   <div class="input_field_type">
                   <label for="">Type of Commission*</label>
@@ -158,6 +188,7 @@
                     <option value="Traditional">Traditional</option>
                     <option value="Painting">Painting</option>
                     <option value="Sketch">Sketch</option>
+                    <option value="Line Art">Line Art</option>
                     <option value="Full Digital">Full Digital</option>
                   </select>
                   <label for="">Wanted Artist *</label>
@@ -172,50 +203,122 @@
                       <label for="">Details about order* (1000 char max)</label>
                       <textarea id="details_order" name="message" class="input" placeholder="Details about order.."></textarea>
                     </div>
-                  <input class="submit_form" type="submit" value="Submit">
+                  <input class="submit_form" type="submit" value="Submit" onclick="ajouter_json()">
                   
                 </form>
               </div>
             </div>
           </div>
         </div>
-    
+        
+
         <div class="outside_field">
           <h1 class="header_title">Table of Commissions</h1>
           <p>Our current commissions. If your commissions doesn't appear, go to contact us page. </p>
         </div>
-
         <div class="commissions_table_div">
           <table id="commissions_table" style = "width:1400px">
             <thead class="commissions_table_thead">
                 <tr>
                 <th>Artist</th>
                 <th>Username</th>
-                <th>Commission date</th>
+                <th>Deadline</th>
                 <th>Email</th>
                 <th>Type of commission</th>
                 <th>Details about order</th>
                 </tr>
-      
+  
             </thead>
           </table>
         </div>
+
+      </div>
+        <input type="submit" id="commissions_history_button" value="See more commissions" onclick="historyCommissions()" class="commission_button">
+        <div id="remember_commissions" style="display: none;"></div>
 
 
         <div class="outside_field">
           <h1 class="header_title">Table of Price</h1>
           <p>See our prices in full details! Come on, don't be cheap!</p>
         </div>
+        <div class="price_table_div">
+          <table id="price_table" style = "width:1400px">
+            <thead class="price_table_thead">
+                <tr>
+                <th>Type</th>
+                <th>FACE</th>
+                <th>UPPER BODY</th>
+                <th>FULL BODY</th>
+                <th>SCENERY</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-size: 20px" id="box_traditional">TRADITIONAL</td>
+                <td id="box_traditional">20 €</td>
+                <td id="box_traditional">15 €</td>
+                <td id="box_traditional">16 €</td>
+                <td id="box_traditional">20 €</td>
+              </tr>
+              <tr>
+                <td style="font-size: 20px" id="box_painting">PAINTING</td>
+                <td id="box_painting">25 €</td>
+                <td id="box_painting">15 €</td>
+                <td id="box_painting">10 €</td>
+                <td id="box_painting">30 €</td>
+              </tr>
+              <tr>
+                <td style="font-size: 20px" id="box_sketch">SKETCH</td>
+                <td id="box_sketch">5 €</td>
+                <td id="box_sketch">8 €</td>
+                <td id="box_sketch">10 €</td>
+                <td id="box_sketch">25 €</td>
+              </tr>
+              <tr>
+                <td style="font-size: 20px" id="box_lineart">LINE ART</td>
+                <td id="box_lineart">8 €</td>
+                <td id="box_lineart">10 €</td>
+                <td id="box_lineart">12 €</td>
+                <td id="box_lineart">15 €</td>
+              </tr>
+              <tr>
+                <td style="font-size: 20px" id="box_fulldigi">FULL DIGITAL</td>
+                <td id="box_fulldigi">25 €</td>
+                <td id="box_fulldigi">20 €</td>
+                <td id="box_fulldigi">16 €</td>
+                <td id="box_fulldigi">20 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      </div>
     </section>
 
     <footer class="footer">
-      <a class = "footer_home" href="..\html\home.html">Home</a>
-      <a class = "footer_shop" href="..\html\Shop.html">Shop</a>
-      <a class = "footer_commissions" href="..\html\Commissions.html">Commissions</a>
-      <a class = "footer_contact" href="..\html\Contact.html">Contact</a>
-      <a class = "footer_about" href="..\html\About.html">About Us</a>
+      <div class="footer_container">
+        <div class="footer_social_icons">
+          <a href="https://www.instagram.com/artsydumpt/"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/yoke-ngassa-b53714221/"><i class="fa fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/enx.or/"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/roxane-braconnier-27b58721b/"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="footer_nav">
+          <ul>
+            <li><a href="..\html\home.html">Home</a></li>
+            <li><a href="..\html\Shop.html">Shop</a></li>
+            <li><a href="..\html\Commissions.html">Commissions</a></li>
+            <li><a href="..\html\Contact.html">Contact</a></li>
+            <li><a href="..\html\About.html">About Us</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+      </div>
     </footer>
+    <script src="../js/home.js"></script>
+    <script src="../js/commissions.js"></script>
+
   </body>
 </html>

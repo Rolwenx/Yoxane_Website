@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 /* ---------------------- OUTSIDE -------------------------- */
 .outside_field{
-    align-items: center;
-    justify-content: center;
+
     display: flex;
     flex-direction: column;
 
@@ -11,9 +12,10 @@
     font-family: 'Poppins', sans-serif;
     margin-bottom: 10px;
     text-align: center;
-    color:  #FFDB58;
-    text-shadow: 1px 1px 6px black;
+    color:  #9966CC;
+    text-shadow: 1px 1px 6px #A593E0;
     font-size: 50px;
+    
 }
 
 
@@ -24,7 +26,8 @@
     opacity: 0.8;
     margin-top: 10px;
     margin-bottom: 50px;
-    color: white;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
 /* ---------------------- LOWER COMMISSIONS BOX -------------------------- */
@@ -41,8 +44,9 @@
     font-weight: bold;
     text-align: center;
     font-size: 34px;
-    background-color: #FFDB58;
-    box-shadow: 0 0 5px 0px rgb(0,0,0,0.5);
+    color: white;
+    background-color: #A593E0;
+    box-shadow: 0 0 5px 0px  rgb(0,0,0,0.5);
 }
 
 .first_lower_box, .second_lower_box {
@@ -66,9 +70,10 @@
   }
 
   .lower_box_text p{
-    margin: 0;
+    margin: 15px 0 0 0;
     padding: 0;
     font-size: 15px;
+    color: black;
   }
 /* ---------------------- UPPER COMMISSIONS BOX -------------------------- */
 
@@ -128,7 +133,7 @@
     text-align: center;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
-
+    color:  rgba(0, 0, 0, 0.7);;
     font-weight: bold;
     font-size: 34px;
   }
@@ -145,28 +150,44 @@
     margin: 5px 0;
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
+    color: black;
 
   }
 
   .commission_button{
-    border: 2px solid #FFDB58;
-    border-radius: 15px;
-    background-color: #FFDB58;
+    border: 2px solid #A593E0;
+    border-radius: 7px;
+    background-color: #A593E0;
     outline: none;
     cursor: pointer;
     font-size: 0.95rem;
-    color: black;
+    color: white;
     line-height: 1;
     transition: 0.5s;
-    /*Increase size of box*/
     position: relative;
   }
+
 
   .commission_button:hover{
     background-color: transparent;
     color: black;
     transform: scale(1.1);
 }
+
+/* This is the button allowing the user to see more commissions so to see
+the history of old commissions that were already saved in the website*/
+#commissions_history_button{
+    margin-left: 738px;
+    margin-bottom: 50px;
+}
+
+/* To give a greyish style to show that the "see more commissions" has already been
+clicked and can't be anymore*/
+#commissions_history_button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    border: none;
+  }
 /* ----------- FLIPPING CARDS -------------------------- */
 
 .first_box:hover, .second_box:hover, .third_box:hover,
@@ -204,7 +225,7 @@
 
 .popup_header h2{
     font-family: 'Poppins', sans-serif;
-    font-size: 35px;
+    font-size: 25px;
     margin: 0;
 	color: #333;
 }  
@@ -213,7 +234,7 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     margin-bottom: 30px;
-    color: #5F9EA0;
+    color: #A593E0;
     font-size: 12px;
     opacity: 0.7;
     padding: 0;
@@ -227,6 +248,7 @@
 	left: 0;
 	right: 0;
 	background: rgba(0, 0, 0, 0.8);
+    
     visibility: hidden;
 	opacity: 0;
     
@@ -237,8 +259,8 @@
     opacity: 1;
   }
 
-.wrapper {
-    margin: 50px 0 0 550px;
+.wrapper_popup {
+    margin: 105px 0 0 550px;
 	padding: 20px;
 	background: white;
 	border-radius: 5px;
@@ -247,7 +269,7 @@
 	transition: all 3s ease-in-out;
 }
 
-.wrapper .closePopup {
+.wrapper_popup .closePopup {
 	position: absolute;
 	top: 26px;
 	right: 30px;
@@ -258,15 +280,15 @@
 	text-decoration: none;
 	color: #333;
 }
-.wrapper .closePopup:hover {
-	color: #5F9EA0;
+.wrapper_popup .closePopup:hover {
+	color: #A593E0;
 }
 
 
 
 .form {
 	border-radius: 10px;
-	background-color: #FFDB58;
+	background-color: #d2cce4;
 	padding: 25px 15px;
 }
 
@@ -279,12 +301,12 @@ form label {
 
 input[type=text], select, input[type=mail] {
 	width: 100%;
-	padding: 12px;
+	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
 	margin-top: 6px;
-	margin-bottom: 16px;
+	margin-bottom: 4px;
 	resize: vertical;
     resize: none;
 }
@@ -292,17 +314,17 @@ input[type=text], select, input[type=mail] {
 textarea{
     min-height: 100px;
     width: 100%;
-	padding: 12px;
+	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
 	margin-top: 6px;
-	margin-bottom: 16px;
+	margin-bottom: 4px;
     resize: none;
 }
 
 .submit_form {
-	background-color: #5F9EA0;
+	background-color: #A593E0;
 	color: #fff;
 	padding: 8px 18px;
 	border: 2px solid white;
@@ -317,15 +339,14 @@ textarea{
 
 /* ----------- TABLE OF COMMISSIONS */
 
-.commissions_table_div{
+.commissions_table_div, .price_table_div{
     width: 80%;
     padding-left: 100px;
-    /* To center the table*/
 
 }
 
-#commissions_table{
-    border: 5px solid #D8E0E7;
+#commissions_table, #price_table{
+    border: 5px solid #9966CC;
     box-shadow: 1px 1px 3px 1px grey;
     margin-bottom: 30px;
     justify-content: center;
@@ -334,23 +355,63 @@ textarea{
 }
 
 
-.commissions_table_thead{
+.commissions_table_thead, .price_table_thead{
     font-family: 'Poppins', sans-serif;
     color: black;
     margin-bottom: 30px;
-    border-bottom: 5px solid #D8E0E7;
-    border-right: 1px solid #D8E0E7;
+    border-bottom: 5px solid #9966CC;
+    border-right: 1px solid #9966CC;
     font-size: 18px;
-    background-color: white;
+    background-color: #eee1fc;
+    text-align: center;
 }
-
 
 
 td{
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: black;
     margin-bottom: 30px;
-    border-bottom: 1px solid #D8E0E7;
-    border-right: 1px solid #D8E0E7;
+    border-bottom: 1px solid #9966CC;
+    border-right: 1px solid #9966CC;
     text-align: center;
+    padding: 10px;
+
+}
+
+
+/* --------- TABLE OF PRICE --------*/
+
+#box_traditional{
+    font-weight: 900;
+    background-color: #FFDB58;
+    color:black;
+    border: 2px #FFDB58;
+}
+
+#box_painting{
+    font-weight: 900;
+    background-color: #f16f6f;
+    color:black;
+    border: 2px #f16f6f;
+}
+
+#box_sketch{
+    font-weight: 900;
+    background-color: #6fcaf1;
+    color:black;
+    border: 2px #6fcaf1;
+}
+
+#box_lineart{
+    font-weight: 900;
+    background-color: #e1f27e;
+    color:black;
+    border: 2px #e1f27e;
+}
+
+#box_fulldigi{
+    font-weight: 900;
+    background-color: #f1ce6f;
+    color:black;
+    border: 2px #f1ce6f;
 }

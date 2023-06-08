@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>"Yoxane - Home"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
+    <title>Yoxane - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link type="text/css" rel= "stylesheet" href="..\css\style_accueil.css ">
     <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
   </head>
   <body>
-    <header class="header">
+    <header>
       <nav class="nav_bar">
-        <div id="menu_home">
-          <ul>
-            <li class="site_title"><a href="#">YOXANE</a></li>
+        <div id="logo">YOXANE</div>
+          <ul class="elements_of_navbar">
             <li class="nav"><a href="..\html\home.html">Home</a></li>
             <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
             <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
             <li class="nav"><a href="..\html\contact.html">Contact</a></li>
             <li class="nav"><a href="..\html\about.html">About us</a></li>
-        </ul>
-        </div>
+          </ul>
       </nav>
-      <div class="Image_quote">
-          <img class= "header_img" src= "..\img\img_head.jpg" alt="ArtFondimage" width = 100% style="filter: brightness(64%)"></a> 
-          <div class="Home_quote">Every Stroke Tells a Story: Find Your Perfect Drawing Here</div>
-      </div>
   </header> 
-    
-  <h1 class="accueil_buy_phrase">Explore & Order</h1>
   <section>
+    <div class="social_icons">
+      <a href="https://www.instagram.com/artsydumpt/"><i class="fa fa-instagram"><span class="icon_text">Yoke</span></i><br></a>
+      <a href="https://www.instagram.com/enx.or/"><i class="fa fa-instagram"><span class="icon_text">Roxane</span></i><br></a>
+    </div>
+    <div class="wrapper">
+      <div>
+        <span class="welcome_text">Welcome</span>
+        <h1>We're <span class="artist_text">Artists</span></h1>
+        <p>We're a group of 2 friends, motivated by a common passion for drawings.
+          We've decided to start our small business together, in which we will firstly sell our drawings,
+          but also take commissions from you guys. We're happy to start this journey with you.
+        </p>
+        <div class="header_buttons">
+          <a href="..\html\commissions.html">
+            <button class="button">Make a commission</button>
+          </a>
+          <a href="..\html\Shop.html">
+            <button class="button">Buy Now</button>
+          </a>
+        </div>
+      </div>
+
+      <!--Now we take care of the splash and the image-->
+      <div>
+        <div class="splash_box">
+          <img src="..\img\Home\splash_custom.png" id="splash">
+          <img src="..\img\Home\header.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="separation_div"></div>
+
+  <section>
+    <div class="outside_field">
+      <h1 class="header_title">Explore & Order</h1>
+    </div>
     <div class="container" id="drawing_home">
       <div class="image-container">
       <a href="..\html\Shop.html?selection=enaxor"> <!--the "?" allow to indicate the start of a string-->
-        <img src="..\img\roxane_dessin.jpg" alt="Image 1">
+        <img src="..\img\Roxane_drawing\roxane_dessin.jpg" alt="Showcased Image Roxane">
         <div class="overlay">
           <div class="text">Enaxor</div>
         </div>
@@ -38,7 +69,7 @@
       </div>
       <div class="image-container">
       <a href="..\html\Shop.html?selection=nolwen">
-        <img src="..\img\yoke_dessin.jpg" alt="Image 2">
+        <img src="..\img\Yoke_drawing\yoke_drawing_1.png" alt="Showcased image Yoke">
         <div class="overlay">
           <div class="text">Nolwen</div>
         </div>
@@ -53,17 +84,45 @@
       </a>
     </div>
   </section>
+  <div class="separation_div"></div>
+  <section>
+    <div class="outside_field">
+      <h1 class="header_title">Customer Review</h1>
+    </div>
+  </section>
+  <div class="separation_div"></div>
+  <section>
+    <div class="outside_field">
+      <h1 class="header_title">The Team</h1>
+    </div>
+  </section>
     
-
-    <h1>Transform your ideas into art with our drawing commissions!</h1>
     
-    <footer class="footer">
-      <a class = "footer_home" href="..\html\home.html">Home</a>
-      <a class = "footer_shop" href="..\html\Shop.html">Shop</a>
-      <a class = "footer_commissions" href="..\html\Commissions.html">Commissions</a>
-      <a class = "footer_contact" href="..\html\Contact.html">Contact</a>
-      <a class = "footer_about" href="..\html\About.html">About Us</a>
-    </footer>
+    
+  <footer class="footer">
+    <div class="footer_container">
+      <div class="footer_social_icons">
+        <a href="https://www.instagram.com/artsydumpt/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/yoke-ngassa-b53714221/"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/enx.or/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/roxane-braconnier-27b58721b/"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <div class="footer_nav">
+        <ul>
+          <li><a href="..\html\home.html">Home</a></li>
+          <li><a href="..\html\Shop.html">Shop</a></li>
+          <li><a href="..\html\Commissions.html">Commissions</a></li>
+          <li><a href="..\html\Contact.html">Contact</a></li>
+          <li><a href="..\html\About.html">About Us</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+    </div>
+  </footer>
 
+    <script src="../js/home.js"></script>
   </body>
 </html>
