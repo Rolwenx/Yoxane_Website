@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yoxane - About</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
-    <link rel= "stylesheet" href="..\css\style_accueil.css ">
+    <link rel= "stylesheet" href="../css/style_accueil.css ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    <link type="text/css" rel= "stylesheet" href="../css/style_all_pages.css ">
+    <link type="text/css" rel= "stylesheet" href="../css/about.css ">
+    <script src="../js/All_page.js"></script>
   </head>
   <body>
     <header>
       <nav class="nav_bar">
         <div id="logo">YOXANE</div>
-          <ul class="elements_of_navbar">
-            <li class="nav"><a href="..\html\home.html">Home</a></li>
-            <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
-            <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
-            <li class="nav"><a href="..\html\contact.html">Contact</a></li>
-            <li class="nav"><a href="..\html\about.html">About us</a></li>
-          </ul>
+        <button class="menu-toggle">Menu</button>
+        <ul class="elements_of_navbar">
+          <li class="nav"><a href="../html/home.html">Home</a></li>
+          <li class="nav"><a href="../html/Shop.html">Shop</a></li>
+          <li class="nav"><a href="../html/commissions.html">Commisions </a></li>
+          <li class="nav"><a href="../html/contact.html">Contact</a></li>
+          <li class="nav"><a href="../html/about.html">About us</a></li>
+        </ul>        
       </nav>
   </header> 
   <section>
@@ -33,26 +37,40 @@
           but also take commissions from you guys. We're happy to start this journey with you.
         </p>
         <div class="header_buttons">
-          <a href="..\html\commissions.html">
-            <button class="button">Make a commission</button>
-          </a>
-          <a href="..\html\Shop.html">
-            <button class="button">Buy Now</button>
-          </a>
+          <a href="../html/commissions.html" class="button">Make a commission</a>
+          <a href="../html/Shop.html" class="button">Buy Now</a>
         </div>
       </div>
 
       <!--Now we take care of the splash and the image-->
       <div>
         <div class="splash_box">
-          <img src="..\img\Home\splash_custom.png" id="splash">
-          <img src="..\img\Home\header.png">
+          <img src="../img/Home/splash_custom.png" alt = "splash" id="splash">
+          <img src="../img/Home/header.png" alt="Home_image">
         </div>
       </div>
     </div>
     
   </section>
+  
 
+    <div class="paragraphe">
+        <h2 class="about">About Us</h2>
+        <p class="pres">We are Yoke and Roxane, two friends who share a passion for drawing. We are a group of students who decided to create this website as part of a project. Our goal was to share our passion for drawing with others and to bring happiness to people through our art. We've always loved creating art and expressing ourselves through our drawings.</p>
+        <br>
+        <h2 class="reason">Why We Created This Site</h2>
+        <p class="pres-reason">Drawing has always been an important part of our lives. It’s a way for us to express ourselves and to connect with others. We wanted to create a platform where we could share our art with the world and inspire others to create their own.
+
+        That’s why we created this website - to connect with other artists and art lovers and to share our love for drawing with the world. We hope that our site will bring joy and inspiration to everyone who visits it.
+
+        </p>
+        <br>
+        
+        <br>
+</div>
+<p class="thanks">Thank you for visiting our site and supporting our passion for drawing!</p>
+<br>
+<br>
     
 
   <footer class="footer">
@@ -65,17 +83,26 @@
       </div>
       <div class="footer_nav">
         <ul>
-          <li><a href="..\html\home.html">Home</a></li>
-          <li><a href="..\html\Shop.html">Shop</a></li>
-          <li><a href="..\html\Commissions.html">Commissions</a></li>
-          <li><a href="..\html\Contact.html">Contact</a></li>
-          <li><a href="..\html\About.html">About Us</a></li>
+          <li><a href="../html/home.html">Home</a></li>
+          <li><a href="../html/Shop.html">Shop</a></li>
+          <li><a href="../html/Commissions.html">Commissions</a></li>
+          <li><a href="../html/Contact.html">Contact</a></li>
+          <li><a href="../html/About.html">About Us</a></li>
           
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+      <p class="validation">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+        </a>
+      </p>
+      
+             
     </div>
   </footer>
   </body>

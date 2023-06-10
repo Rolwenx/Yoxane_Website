@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yoxane - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="text/css" rel= "stylesheet" href="..\css\style_accueil.css ">
-    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    <link type="text/css" rel="stylesheet" href="../css/style_accueil.css">
+    <link type="text/css" rel="stylesheet" href="../css/style_all_pages.css">
+    <script src="../js/All_page.js"></script>
   </head>
   <body>
     <header>
       <nav class="nav_bar">
         <div id="logo">YOXANE</div>
-          <ul class="elements_of_navbar">
-            <li class="nav"><a href="..\html\home.html">Home</a></li>
-            <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
-            <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
-            <li class="nav"><a href="..\html\contact.html">Contact</a></li>
-            <li class="nav"><a href="..\html\about.html">About us</a></li>
-          </ul>
+        <button class="menu-toggle">Menu</button>
+        <ul class="elements_of_navbar">
+          <li class="nav"><a href="../html/home.html">Home</a></li>
+          <li class="nav"><a href="../html/Shop.html">Shop</a></li>
+          <li class="nav"><a href="../html/commissions.html">Commisions </a></li>
+          <li class="nav"><a href="../html/contact.html">Contact</a></li>
+          <li class="nav"><a href="../html/about.html">About us</a></li>
+        </ul>        
       </nav>
-  </header> 
-  <section>
+      
+    </header> 
+    <section>
+  
     <div class="social_icons">
       <a href="https://www.instagram.com/artsydumpt/"><i class="fa fa-instagram"><span class="icon_text">Yoke</span></i><br></a>
       <a href="https://www.instagram.com/enx.or/"><i class="fa fa-instagram"><span class="icon_text">Roxane</span></i><br></a>
@@ -33,20 +38,16 @@
           but also take commissions from you guys. We're happy to start this journey with you.
         </p>
         <div class="header_buttons">
-          <a href="..\html\commissions.html">
-            <button class="button">Make a commission</button>
-          </a>
-          <a href="..\html\Shop.html">
-            <button class="button">Buy Now</button>
-          </a>
+          <a href="../html/commissions.html" class="button">Make a commission</a>
+          <a href="../html/Shop.html" class="button">Buy Now</a>
         </div>
       </div>
 
       <!--Now we take care of the splash and the image-->
       <div>
         <div class="splash_box">
-          <img src="..\img\Home\splash_custom.png" id="splash">
-          <img src="..\img\Home\header.png">
+          <img src="../img/Home/splash_custom.png" alt = "splash" id="splash">
+          <img src="../img/Home/header.png" alt="Home_image">
         </div>
       </div>
     </div>
@@ -60,45 +61,29 @@
     </div>
     <div class="container" id="drawing_home">
       <div class="image-container">
-      <a href="..\html\Shop.html?selection=enaxor"> <!--the "?" allow to indicate the start of a string-->
-        <img src="..\img\Roxane_drawing\roxane_dessin.jpg" alt="Showcased Image Roxane">
-        <div class="overlay">
-          <div class="text">Enaxor</div>
-        </div>
-      </a>
+        <a href="../html/Shop.html?selection=enaxor">
+          <img src="../img/Roxane_drawing/roxane_dessin.jpg" alt="Showcased Image Roxane">
+          <div class="overlay">
+            <div class="text">Enaxor</div>
+          </div>
+        </a>
       </div>
       <div class="image-container">
-      <a href="..\html\Shop.html?selection=nolwen">
-        <img src="..\img\Yoke_drawing\yoke_drawing_1.png" alt="Showcased image Yoke">
-        <div class="overlay">
-          <div class="text">Nolwen</div>
-        </div>
-      </a>
+        <a href="../html/Shop.html?selection=nolwen">
+          <img src="../img/Yoke_drawing/yoke_drawing_painting.png" alt="Showcased image Yoke">
+          <div class="overlay">
+            <div class="text">Nolwen</div>
+          </div>
+        </a>
       </div>
-     </div>
-      
     </div>
     <div class="button_home">
-      <a href="..\html\Shop.html">
-        <button class="buy-button">GO TO SHOP</button>
-      </a>
+      <a href="../html/Shop.html"  class="buy-button">GO TO SHOP</a>
     </div>
   </section>
+
   <div class="separation_div"></div>
-  <section>
-    <div class="outside_field">
-      <h1 class="header_title">Customer Review</h1>
-    </div>
-  </section>
-  <div class="separation_div"></div>
-  <section>
-    <div class="outside_field">
-      <h1 class="header_title">The Team</h1>
-    </div>
-  </section>
-    
-    
-    
+   
   <footer class="footer">
     <div class="footer_container">
       <div class="footer_social_icons">
@@ -109,17 +94,23 @@
       </div>
       <div class="footer_nav">
         <ul>
-          <li><a href="..\html\home.html">Home</a></li>
-          <li><a href="..\html\Shop.html">Shop</a></li>
-          <li><a href="..\html\Commissions.html">Commissions</a></li>
-          <li><a href="..\html\Contact.html">Contact</a></li>
-          <li><a href="..\html\About.html">About Us</a></li>
-          
+          <li><a href="../html/home.html">Home</a></li>
+          <li><a href="../html/Shop.html">Shop</a></li>
+          <li><a href="../html/Commissions.html">Commissions</a></li>
+          <li><a href="../html/Contact.html">Contact</a></li>
+          <li><a href="../html/About.html">About Us</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+      <p class="validation">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+        </a>
+      </p>
     </div>
   </footer>
 

@@ -30,7 +30,9 @@
 
 /* ------------ MENU HEADBAR TO FILTER --------*/
 
-    #menu_choice_img {
+#menu_choice_img {
+    display: flex;
+    flex-wrap: wrap;
     font-family: 'Poppins', sans-serif;
     list-style-type: none; /* Remove the default list style */
     margin: 0; /* Remove the default margin */
@@ -42,10 +44,10 @@
     height: 60px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 
-    }
+}
    
     /* Style for the menu choice image list items */
-    #menu_choice_img li{
+#menu_choice_img li{
     display: block; 
     color:black; 
     text-align: center;
@@ -54,7 +56,7 @@
     font-size:20px; 
     cursor: pointer;
     font-weight: 600;
-    }
+}
 
    
    /* Change the link color to #111 (black) on hover */
@@ -67,6 +69,7 @@
     cursor: pointer;
 }
 
+/* ------------ CART DESGIN -------------*/
 .cart{
     position:fixed;
     top:0;
@@ -75,7 +78,7 @@
     min-height:100vh;
     background-color: #A593E0;
     box-shadow:  -2px 0 4px hsl(0 4% 15%/10%);
-    z-index: 1;
+    z-index: 1001;
     transition:0.3s
 
 }
@@ -130,14 +133,14 @@
 .cart-title{
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size:1.5rem;
+    font-size:24px;
     font-weight: 600;
     margin-top: 20px;
     color: black;
 }
 
 .cart-product-title{
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .remove{
@@ -151,6 +154,41 @@
     cursor: pointer;
 }
 
+.cart-total{
+    font-weight: bold;
+    align-items: center;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-right: 10px; /* Adjust the padding to align the price */
+    border-top: 1px solid black;
+}
+
+.buy_button{
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    background-color: #A593E0;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    transition: 0.5s;
+    /*Increase size of box*/
+    letter-spacing: 2px;
+    box-shadow: 0 2px 9px #A593E0;
+    padding: 20px 26px;
+    margin: 35px 10px;
+}
+
+.button_buy-cart{
+    text-align: center;
+}
+
+.cart-total-price{
+    padding: 10px;
+}
   
 /* -------- BLOCK OF THE DRAWINS TO SELL -----*/
 
@@ -206,6 +244,7 @@
     background-color: white;
 }
 
+
 .add-icon,
 .show-icon {
     display: flex;
@@ -222,41 +261,16 @@
     cursor: pointer;
 }
 
-
-.cart-total-price{
-    padding: 10px;
-}
-
-.older_orders {
-    
-    opacity:0;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    background-color: #A593E0;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow:  -2px 0 4px hsl(0 4% 5%/10%);
-
-}
-
-.older_orders h2 {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-}
-
-.older_orders.active{
-    transition:0.3s;
-    opacity:1;    
-    z-index: 1;
-}
-
-.older_orders .Command_number{
+.close-icon {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 24px;
     cursor: pointer;
+    color: aliceblue;
+    font-size: 120px;
 }
+
 
 /* -------- FORM WHEN YOU FINISHED SHOPPING ---*/
 
@@ -267,12 +281,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    height: 600px;
+    height: 700px;
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow:  -2px 0 4px hsl(0 4% 5%/10%);
+    z-index: -1;
+    
 
 }
 
@@ -293,7 +309,7 @@
 .form_order.active{
     transition:0.3s;
     opacity:1;    
-    z-index: 1;
+    z-index: 1001;
 }
 
 .form_order label{
@@ -324,38 +340,88 @@
     resize: none;
 }
 
-.img-wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.15);
-  }
-  
-  .big-image {
-    display: block;
-  }
-  
-  .close-icon {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: aliceblue;
-    font-size: 120px;
-  }
-  
-  
-/* ---------- BUTTON---------*/
-.buy_button{
-    border: 2px solid #A593E0;
-    background-color: white;
-    outline: none;
-    width: 50px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    color: black;
-    line-height: 1;
-    transition: 0.5s;
-    position: relative;
+
+.order_table_div{
+    display: flex;
+
 }
+
+.order_table_div table{
+    margin: auto;
+
+}
+
+#order_table{
+    border: 5px solid #9966CC;
+    box-shadow: 1px 1px 3px 1px grey;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.order_table_thead{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border-bottom: 5px solid #9966CC;
+    border-right: 1px solid #9966CC;
+    font-size: 18px;
+    background-color: #eee1fc;
+    text-align: center;
+}
+
+
+td{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border-bottom: 1px solid #9966CC;
+    border-right: 1px solid #9966CC;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.orders{
+
+    font-size: 95px;
+    font-weight: 800;
+    color: #A593E0;
+    display: block;
+    text-align: center;
+
+}
+
+
+/* Ajouter un media query pour les écrans plus petits */
+@media (max-width: 600px) {
+    #menu_choice_img li {
+        font-size: 14px;
+        padding: 5px;
+      }
+      
+    #cart {
+        margin: 0 10px;
+    }
+
+    #order_table {
+        width: 100%;
+      }
+
+      #order_table th:nth-child(4), #order_table th:nth-child(6),#order_table td:nth-child(4),#order_table td:nth-child(6) {
+    display: none;
+  }
+    #order_table th, #order_table td {
+        font-size: 14px;
+        padding: 5px;
+      }
+    .orders{
+        padding-top: 10px;
+        font-size: 40px;
+    }
+    .cart{
+        width:280px
+    
+    }
+  }
+  

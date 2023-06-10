@@ -8,7 +8,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-color: rgb(255, 252, 252);
+  background-color: rgb(255, 252, 252);
 }
 
 section {
@@ -16,13 +16,13 @@ section {
   }
 
 
-    .separation_div{
-    background-color: white;
-    height: 10px;
-    margin-bottom: -80px;
-    box-shadow: 0 2px 9px #A593E0;
+.separation_div{
+  background-color: white;
+  height: 10px;
+  margin-bottom: -80px;
+  box-shadow: 0 2px 9px #A593E0;
 
-    }
+}
 
   /* ------------ NAVBAR-------------*/
 
@@ -51,6 +51,10 @@ section {
 }
 
 /* ------------- NAV BAR -------------*/
+
+.menu-toggle {
+  display: none;
+}
 
 .elements_of_navbar{
     display: flex;
@@ -170,13 +174,13 @@ p{
     display: block;
     color:#A593E0;
     font-size: 16px;
-    width: 90%;
 }
 
 /* --------- BUTTONS IN HEADER --------*/
 .header_buttons{
-    position: relative;
-    left: 200px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center
 }
 .button{
     cursor: pointer;
@@ -245,35 +249,7 @@ p{
 
 
 
-/* ---------------------- FOOTER -------------------------- 
-.footer {
-    margin-top: 50px;
-    padding: 4px;
-    overflow: hidden;
-    background-color: #A593E0;
-    /* X, Y, Blur radius, Spread radius, color
-    box-shadow: 1px 1px 3px 1px black;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 50px;
-}
-
-.footer_home, .footer_shop, .footer_commissions, .footer_contact, .footer_about{
-    padding: 5px 10px;
-    display: inline-block;
-    justify-content: center;
-    font-size: 24px;
-    text-decoration: none;
-    border: 1px solid black;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    /*Increase size button
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: white;
-    margin: 10px;
-    font-weight: 600;
-    
-}*/
+/* ---------------------- FOOTER -------------------------- */
 
 
 footer {
@@ -351,10 +327,11 @@ footer {
 
   /* BOTTOM OF THE FOOTER WITH THE CREDIT*/
   .footer-bottom {
+    position: relative;
     display: flex;
     border-top: 1px solid #9966CC;
     padding: 20px;
-    text-align: center;
+    justify-content: center;
   }
   .footer-bottom p{
     color: #9966CC;
@@ -367,15 +344,81 @@ footer {
     font-weight: 600;
     letter-spacing: 2px;
   }
-  /* == responsive == */
-  @media screen and (max-width: 700px) {
-    .footer_nav ul{
-        flex-direction: column;
-    }
-    .footer_nav ul li{
-        width: 100;
-        margin: 10px;
-        text-align: center;
-    }
-  }
   
+  /*Validation*/
+.validation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .footer_nav ul{
+    flex-direction: column;
+  }
+  .footer_nav ul li{
+    width: 100;
+    margin: 10px;
+    text-align: center;
+  }
+  .splash_box img {
+    display:none;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper > div:first-child {
+    order: 1;
+  }
+  h1 {
+    font-size: 42px;
+    order: 3;
+  }
+  p {
+    order: 4;
+  }
+  .splash_box {
+    order: 5;
+  }
+  .header_buttons {
+    order: 6;
+  }
+  .header_buttons .button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .menu-toggle {
+    display :block;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    background-color: #A593E0;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 9px #A593E0;
+    padding: 10px 13px;
+    margin: 35px 10px;
+}
+
+  .elements_of_navbar {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  .social_icons .fa {
+    display:none
+  }
+
+
+}
+
+
+
+

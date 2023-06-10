@@ -63,6 +63,8 @@
     font-family: 'Poppins', sans-serif;
     margin-top: 20px;
  }
+
+
 /* ---------------------- OUTSIDE -------------------------- */
 .outside_field{
     align-items: center;
@@ -98,7 +100,6 @@
 
 
 .container{
-
     position: relative;
     width: 100%;
     padding: 15px;
@@ -245,7 +246,11 @@ textarea.input{
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
 }
+
+
 /* Class to define the label of the message fiel inside*/
+
+
 .input_field_big_textArea label{
     color: white;
     font-size: 18px;
@@ -302,7 +307,7 @@ From Here, we are trying to put blocks space for the labels of our forms,
     font-family: 'Poppins', sans-serif;
     /* We only want the text to be seen when we're selecting
     the field (to be done in Javascript)*/
-  color: transparent;
+    color: transparent;
     /* Since span is still an input field, we have the pointer for
     writing on a field so we remove it*/
     pointer-events: none;
@@ -505,7 +510,7 @@ then show the before/after when the user is selecting(focused) the field*/
     .form {
       display: block;
       height: auto;
-      max-width: none;
+      max-width: 90%;
       border-radius: 0;
       box-shadow: none;
     }
@@ -526,20 +531,17 @@ then show the before/after when the user is selecting(focused) the field*/
   
     .input_field,
     .input_field_reason {
-      margin: 10px 0;
+        text-align: center;
     }
   
     .input {
-      width: 100%;
+      width: 95%;
     }
   
     textarea.input {
       min-height: 120px;
     }
-  
-    .input_field_reason select {
-      width: 100%;
-    }
+
   
     .submit_button {
       width: 100%;
@@ -554,5 +556,30 @@ then show the before/after when the user is selecting(focused) the field*/
     .big_circle_behind {
       display: none;
     }
+
+    .input_field_big_textArea textarea {
+        margin: auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .input_field_big_textArea{
+        padding-bottom: 40px;
+    }
+
+    .input_field, .input_field_reason {
+    margin-bottom: 40px;
+    }
+    
+    .input_field_big_textArea label[for="message"] {
+        display: none;
+    }
+    
+    .required_field{
+        display: none;
+    }
+
+
   }
   

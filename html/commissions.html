@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yoxane - Commissions</title> 
     <link rel= "stylesheet" href="../css/style_commissions.css">
-    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    <link type="text/css" rel= "stylesheet" href="../css/style_all_pages.css ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../json/commissions_storage.json"></script>
+    <script src="../js/All_page.js"></script>
   </head>
   <body>
     <header>
       <nav class="nav_bar">
         <div id="logo">YOXANE</div>
-          <ul class="elements_of_navbar">
-            <li class="nav"><a href="..\html\home.html">Home</a></li>
-            <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
-            <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
-            <li class="nav"><a href="..\html\contact.html">Contact</a></li>
-            <li class="nav"><a href="..\html\about.html">About us</a></li>
-          </ul>
+        <button class="menu-toggle">Menu</button>
+        <ul class="elements_of_navbar">
+          <li class="nav"><a href="../html/home.html">Home</a></li>
+          <li class="nav"><a href="../html/Shop.html">Shop</a></li>
+          <li class="nav"><a href="../html/commissions.html">Commisions </a></li>
+          <li class="nav"><a href="../html/contact.html">Contact</a></li>
+          <li class="nav"><a href="../html/about.html">About us</a></li>
+        </ul>        
       </nav>
   </header> 
   <section>
@@ -34,27 +37,23 @@
           but also take commissions from you guys. We're happy to start this journey with you.
         </p>
         <div class="header_buttons">
-          <a href="..\html\commissions.html">
-            <button class="button">Make a commission</button>
-          </a>
-          <a href="..\html\Shop.html">
-            <button class="button">Buy Now</button>
-          </a>
+          <a href="../html/commissions.html" class="button">Make a commission</a>
+          <a href="../html/Shop.html" class="button">Buy Now</a>
         </div>
       </div>
 
       <!--Now we take care of the splash and the image-->
       <div>
         <div class="splash_box">
-          <img src="..\img\Home\splash_custom.png" id="splash">
-          <img src="..\img\Home\header.png">
+          <img src="../img/Home/splash_custom.png" alt = "splash" id="splash">
+          <img src="../img/Home/header.png" alt="Home_image">
         </div>
       </div>
     </div>
     
   </section>
   <div class="separation_div"></div>
-    <section>
+    <section id="commission-section">
       <div>
         <div class="outside_field">
           <h1 class="header_title">Commissions Info</h1>
@@ -173,41 +172,41 @@
             <div class="content">
               <div class="form">
                 <form name="commission_form" id="commission_form">
-                  <label for="">Username*</label>
+                  <label for="username">Username*</label>
                   <input id="username" type="text" name="username" class="input" placeholder="Name..">
-  
-                  <label for="">Email*</label>
-                  <input id="email" type="mail" name="email" class="input" placeholder="Email..">
-                  <label for="">Deadline*</label>
+            
+                  <label for="email">Email*</label>
+                  <input id="email" type="email" name="email" class="input" placeholder="Email..">
+                  <br>
+                  <label for="date_limit">Deadline*</label>
                   <input id="date_limit" type="date" name="date_limit" class="input">
-
+            
                   <div class="input_field_type">
-                  <label for="">Type of Commission*</label>
-                  <select name="type" id="type_select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="Traditional">Traditional</option>
-                    <option value="Painting">Painting</option>
-                    <option value="Sketch">Sketch</option>
-                    <option value="Line Art">Line Art</option>
-                    <option value="Full Digital">Full Digital</option>
-                  </select>
-                  <label for="">Wanted Artist *</label>
-                  <select name="type_artist" id="artist_select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="Enaxor">Enaxor</option>
-                    <option value="Yoke">Yoke</option>
-                  </select>
+                    <label for="type_select">Type of Commission*</label>
+                    <select name="type" id="type_select">
+                      <option value="">--Please choose an option--</option>
+                      <option value="Traditional">Traditional</option>
+                      <option value="Painting">Painting</option>
+                      <option value="Sketch">Sketch</option>
+                      <option value="Line Art">Line Art</option>
+                      <option value="Full Digital">Full Digital</option>
+                    </select>
+                    <label for="artist_select">Wanted Artist *</label>
+                    <select name="type_artist" id="artist_select">
+                      <option value="">--Please choose an option--</option>
+                      <option value="Enaxor">Enaxor</option>
+                      <option value="Yoke">Yoke</option>
+                    </select>
                   </div>
-
-                    <div class="input_field_big_text">
-                      <label for="">Details about order* (1000 char max)</label>
-                      <textarea id="details_order" name="message" class="input" placeholder="Details about order.."></textarea>
-                    </div>
+            
+                  <div class="input_field_big_text">
+                    <label for="details_order">Details about order* (1000 char max)</label>
+                    <textarea id="details_order" name="message" class="input" placeholder="Details about order.."></textarea>
+                  </div>
                   <input class="submit_form" type="submit" value="Submit" onclick="ajouter_json()">
-                  
                 </form>
               </div>
-            </div>
+            </div>            
           </div>
         </div>
         
@@ -253,40 +252,40 @@
                 </tr>
             </thead>
             <tbody>
-              <tr>
-                <td style="font-size: 20px" id="box_traditional">TRADITIONAL</td>
-                <td id="box_traditional">20 €</td>
-                <td id="box_traditional">15 €</td>
-                <td id="box_traditional">16 €</td>
-                <td id="box_traditional">20 €</td>
+              <tr id="box_traditional">
+                <td style="font-size: 20px" >TRADITIONAL</td>
+                <td>20 €</td>
+                <td>15 €</td>
+                <td>16 €</td>
+                <td>20 €</td>
               </tr>
-              <tr>
-                <td style="font-size: 20px" id="box_painting">PAINTING</td>
-                <td id="box_painting">25 €</td>
-                <td id="box_painting">15 €</td>
-                <td id="box_painting">10 €</td>
-                <td id="box_painting">30 €</td>
+              <tr id="box_painting">
+                <td style="font-size: 20px" >PAINTING</td>
+                <td >25 €</td>
+                <td >15 €</td>
+                <td >10 €</td>
+                <td >30 €</td>
               </tr>
-              <tr>
-                <td style="font-size: 20px" id="box_sketch">SKETCH</td>
-                <td id="box_sketch">5 €</td>
-                <td id="box_sketch">8 €</td>
-                <td id="box_sketch">10 €</td>
-                <td id="box_sketch">25 €</td>
+              <tr id="box_sketch">
+                <td style="font-size: 20px" >SKETCH</td>
+                <td >5 €</td>
+                <td>8 €</td>
+                <td>10 €</td>
+                <td>25 €</td>
               </tr>
-              <tr>
-                <td style="font-size: 20px" id="box_lineart">LINE ART</td>
-                <td id="box_lineart">8 €</td>
-                <td id="box_lineart">10 €</td>
-                <td id="box_lineart">12 €</td>
-                <td id="box_lineart">15 €</td>
+              <tr  id="box_lineart">
+                <td style="font-size: 20px">LINE ART</td>
+                <td>8 €</td>
+                <td>10 €</td>
+                <td>12 €</td>
+                <td>15 €</td>
               </tr>
-              <tr>
-                <td style="font-size: 20px" id="box_fulldigi">FULL DIGITAL</td>
-                <td id="box_fulldigi">25 €</td>
-                <td id="box_fulldigi">20 €</td>
-                <td id="box_fulldigi">16 €</td>
-                <td id="box_fulldigi">20 €</td>
+              <tr id="box_fulldigi">
+                <td style="font-size: 20px" >FULL DIGITAL</td>
+                <td>25 €</td>
+                <td>20 €</td>
+                <td>16 €</td>
+                <td>20 €</td>
               </tr>
             </tbody>
           </table>
@@ -304,17 +303,24 @@
         </div>
         <div class="footer_nav">
           <ul>
-            <li><a href="..\html\home.html">Home</a></li>
-            <li><a href="..\html\Shop.html">Shop</a></li>
-            <li><a href="..\html\Commissions.html">Commissions</a></li>
-            <li><a href="..\html\Contact.html">Contact</a></li>
-            <li><a href="..\html\About.html">About Us</a></li>
+            <li><a href="../html/home.html">Home</a></li>
+            <li><a href="../html/Shop.html">Shop</a></li>
+            <li><a href="../html/Commissions.html">Commissions</a></li>
+            <li><a href="../html/Contact.html">Contact</a></li>
+            <li><a href="../html/About.html">About Us</a></li>
             
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+        <p class="validation">
+          <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="Valid CSS!" />
+          </a>
+        </p>
       </div>
     </footer>
     <script src="../js/home.js"></script>

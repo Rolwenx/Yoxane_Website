@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yoxane - Contact</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
     <link rel= "stylesheet" href="../css/style_contact.css">
     <link type="text/css" rel= "stylesheet" href="../css/style_all_pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../js/contact.js"></script>
+    <script src="../js/All_page.js"></script>
   </head>
   <body>
     <header>
       <nav class="nav_bar">
         <div id="logo">YOXANE</div>
-          <ul class="elements_of_navbar">
-            <li class="nav"><a href="..\html\home.html">Home</a></li>
-            <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
-            <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
-            <li class="nav"><a href="..\html\contact.html">Contact</a></li>
-            <li class="nav"><a href="..\html\about.html">About us</a></li>
-          </ul>
+        <button class="menu-toggle">Menu</button>
+        <ul class="elements_of_navbar">
+          <li class="nav"><a href="../html/home.html">Home</a></li>
+          <li class="nav"><a href="../html/Shop.html">Shop</a></li>
+          <li class="nav"><a href="../html/commissions.html">Commisions </a></li>
+          <li class="nav"><a href="../html/contact.html">Contact</a></li>
+          <li class="nav"><a href="../html/about.html">About us</a></li>
+        </ul>        
       </nav>
   </header> 
   <section>
@@ -34,20 +37,16 @@
           but also take commissions from you guys. We're happy to start this journey with you.
         </p>
         <div class="header_buttons">
-          <a href="..\html\commissions.html">
-            <button class="button">Make a commission</button>
-          </a>
-          <a href="..\html\Shop.html">
-            <button class="button">Buy Now</button>
-          </a>
+          <a href="../html/commissions.html" class="button">Make a commission</a>
+          <a href="../html/Shop.html" class="button">Buy Now</a>
         </div>
       </div>
 
       <!--Now we take care of the splash and the image-->
       <div>
         <div class="splash_box">
-          <img src="..\img\Home\splash_custom.png" id="splash">
-          <img src="..\img\Home\header.png">
+          <img src="../img/Home/splash_custom.png" alt = "splash" id="splash">
+          <img src="../img/Home/header.png" alt="Home_image">
         </div>
       </div>
     </div>
@@ -55,7 +54,7 @@
   <div class="separation_div"></div>
   
 
-    <section>
+    <section class="form-contact">
       <div class="outside_field">
         <h1 class="header_title">Contact Us</h1>
         <p>Any question, remarks, inquiry or even just to talk? Just write us a message!</p>
@@ -108,50 +107,50 @@
           </div>
             <div class="contact_form">
               <form>
-                  <h1 class="title">Contact Us</h1>
-
+                <h1 class="title">Contact Us</h1>
+              
                 <div class="input_field">
-                  <input type="text" name="name" class="input">
-                  <label for="">Username*</label>
+                  <input type="text" name="name" class="input" id="username">
+                  <label for="username">Username*</label>
                   <!--We put in spam to use it as placeholder above the field-->
                   <span>Username*</span>
                 </div>
                 <div class="input_field">
-                  <input type="email" name="email" class="input">
-                  <label for="">Email*</label>
+                  <input type="email" name="email" class="input" id="email">
+                  <label for="email">Email*</label>
                   <span>Email*</span>
                 </div>
                 <div class="input_field">
-                  <input type="tel" name="phone" class="input">
-                  <label for="">Phone</label>
+                  <input type="tel" name="phone" class="input" id="phone">
+                  <label for="phone">Phone</label>
                   <span>Phone</span>
                 </div>
                 <div class="input_field_reason">
-                  <label for="">Reason*</label>
+                  <label for="reason_select">Reason*</label>
                   <select name="reason" id="reason_select">
-                      <option value="">--Please choose an option--</option>
-                      <option value="commissions">Commissions Inquiry</option>
-                      <option value="drawing">Drawing Inquiry</option>
-                      <option value="other">Other</option>
+                    <option value="">--Please choose an option--</option>
+                    <option value="commissions">Commissions Inquiry</option>
+                    <option value="drawing">Drawing Inquiry</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
                 <div class="input_field_big_textArea">
-                  <textarea name="message" class="input"></textarea>
-                  <label for="">Message*</label>
+                  <textarea name="message" class="input" id="message"></textarea>
+                  <label for="message">Message*</label>
                   <span>Message*</span>
                 </div>
-                  <input type="submit" value="Send Message" class="submit_button">
-                  <p class="required_field">* required fields</h1>
-                  <div class="popup_message">
-                    <img src="../img/Contact/tick.png">
-                    <h2>Message Sent!</h2>
-                    <p>Your message has been successfully sent to Roxane & Yoke. 
-                      Thanks.
-                    </p>
-                    <button type="button" onclick="popupDisappears()">OK</button>
-                  </div>
-
+                <input type="submit" value="Send Message" class="submit_button">
+                <p class="required_field">* required fields</p>
+                <div class="popup_message">
+                  <img src="../img/Contact/tick.png" alt="contact">
+                  <h2>Message Sent!</h2>
+                  <p>Your message has been successfully sent to Roxane & Yoke. 
+                    Thanks.
+                  </p>
+                  <button type="button" onclick="popupDisappears()">OK</button>
+                </div>
               </form>
+              
             </div>
         </div>
       </div>
@@ -159,7 +158,7 @@
     </section>
 
 
-
+    
     <footer class="footer">
       <div class="footer_container">
         <div class="footer_social_icons">
@@ -170,33 +169,26 @@
         </div>
         <div class="footer_nav">
           <ul>
-            <li><a href="..\html\home.html">Home</a></li>
-            <li><a href="..\html\Shop.html">Shop</a></li>
-            <li><a href="..\html\Commissions.html">Commissions</a></li>
-            <li><a href="..\html\Contact.html">Contact</a></li>
-            <li><a href="..\html\About.html">About Us</a></li>
-            
+            <li><a href="../html/home.html">Home</a></li>
+          <li><a href="../html/Shop.html">Shop</a></li>
+          <li><a href="../html/Commissions.html">Commissions</a></li>
+          <li><a href="../html/Contact.html">Contact</a></li>
+          <li><a href="../html/About.html">About Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+        <p class="validation">
+          <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="Valid CSS!" />
+          </a>
+        </p>
       </div>
     </footer>
-    <script src="../js/home.js">
-            // FUNCTIONALITY: When user clicks "Send Message", a popup appears
-        let popup_box = document.getElementsByClassName("popup_message")[0];
-
-        function popupAppears(event){
-          // To prevent the default refresh of page
-          event.preventDefault();
-
-          popup_box.classList.add("open_popup");
-        }
-        function popupDisappears(){
-          popup_box.classList.remove("open_popup");
-        }
-        
+    <script src="../js/home.js"> 
     </script>
   </body>
 </html>

@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>"Yoxane - Shop"</title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
-    <link type="text/css"rel= "stylesheet" href="..\css\style_shop.css">
-    <link type="text/css" rel= "stylesheet" href="..\css\style_all_pages.css ">
+    <link type="text/css" rel= "stylesheet" href="../css/style_shop.css">
+    <link type="text/css" rel= "stylesheet" href="../css/style_all_pages.css ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/All_page.js"></script>
+
     
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2/css/boxicons.min.css" rel="stylesheet">
-    <script src="..\js\organisation_table.js"></script>
+    <script src="../js/shop.js"></script>
   </head>
   <body>
     <header>
       <nav class="nav_bar">
         <div id="logo">YOXANE</div>
-          <ul class="elements_of_navbar">
-            <li class="nav"><a href="..\html\home.html">Home</a></li>
-            <li class="nav"><a href="..\html\Shop.html">Shop</a></li>
-            <li class="nav"><a href="..\html\commissions.html">Commisions </a></li>
-            <li class="nav"><a href="..\html\contact.html">Contact</a></li>
-            <li class="nav"><a href="..\html\about.html">About us</a></li>
-          </ul>
+        <button class="menu-toggle">Menu</button>
+        <ul class="elements_of_navbar">
+          <li class="nav"><a href="../html/home.html">Home</a></li>
+          <li class="nav"><a href="../html/Shop.html">Shop</a></li>
+          <li class="nav"><a href="../html/commissions.html">Commisions </a></li>
+          <li class="nav"><a href="../html/contact.html">Contact</a></li>
+          <li class="nav"><a href="../html/about.html">About us</a></li>
+        </ul>        
       </nav>
   </header> 
   <section>
@@ -36,58 +41,51 @@
           but also take commissions from you guys. We're happy to start this journey with you.
         </p>
         <div class="header_buttons">
-          <a href="..\html\commissions.html">
-            <button class="button">Make a commission</button>
-          </a>
-          <a href="..\html\Shop.html">
-            <button class="button">Buy Now</button>
-          </a>
+            <a href="../html/commissions.html" class="button">Make a commission</a>
+            <a href="../html/Shop.html" class="button">Buy Now</a>
         </div>
       </div>
 
       <!--Now we take care of the splash and the image-->
       <div>
         <div class="splash_box">
-          <img src="..\img\Home\splash_custom.png" id="splash">
-          <img src="..\img\Home\header.png">
+          <img src="../img/Home/splash_custom.png" alt ="spash" id="splash">
+          <img src="../img/Home/header.png" alt = "Home_image">
         </div>
       </div>
     </div>
     
-  </section>
+  </section >
+
   <div class="separation_div"></div>
-  <section>
+  
+  <section id="shop-section">
       <div class="outside_field">
         <h1 class="header_title">Shop Now</h1>
         <p>You're one step behind to find the drawing of your dream! What are you waiting for?</p>
       </div>
   </section>
-    <ul id="menu_choice_img">
-      <li onclick="selection_all()">All</li>
-      <li onclick="selection_rox()">Enaxor</li>
-      <li onclick="selection_yo()">Nolwen</li>
-      <li>Fanart</li>
-      <li id="cart" onclick="Open()">Cart</li>
-      <li id="commandes" onclick="Open_old_orders()" >See my orders</li>
-      
-    </ul>
 
+  <ul id="menu_choice_img">
+    <li onclick="selection_all()">All</li>
+    <li onclick="selection_rox()">Enaxor</li>
+    <li onclick="selection_yo()">Nolwen</li>
+    <li onclick="selection_fanart()">Fanart</li>
+    <li onclick="selection_tradi()">Traditional</li>
+    <li onclick="selection_paint()">Painting</li>
+    <li id="cart" onclick="Open()">Cart</li>
+  </ul>
+  
 
-    <div class="older_orders  ">
-      <h2>Old commands</h2>
-      <i class='bx bx-x' id="quit_command" onclick="Close_old_orders()"></i>
-    </div>
     <Div class="cart">
       <h2 class="cart-title">YOUR CART</h2>
+      <div class="cart-content"></div>
       <div class="cart-total">
         Total: <span class="cart-total-price">0€</span>
-       </div>
-      <div class="cart-content"></div>
-      <section>
-        <fieldset class="bouton_buy-cart">
+      </div>
+        <div class="button_buy-cart">
             <button type="button" class="buy_button" onclick="verif_cart()">BUY</button>
-      </fieldset>
-      </section>
+        </div>
     <i class='bx bx-x' id="quit_cart" onclick="Quit()"></i>
     </DIV>
     <div class="form_order">
@@ -99,7 +97,7 @@
     <section class="container" id="img_container">
       <div class="image-container">
         <div style="position: relative;">
-          <img src="..\img\Roxane_drawing\roxane_dessin.jpg" alt="Image 1">
+          <img src="../img/Roxane_drawing/roxane_fanart4.jpg" alt="Image 1">
           <div class="icon">
             <div class="add-icon">
               <i class='bx bx-shopping-bag add-cart'></i>
@@ -114,7 +112,7 @@
       </div>
       <div class="image-container">
         <div style="position: relative;">
-          <img src="..\img\Roxane_drawing\roxane_dessin.jpg" alt="Image 2">
+          <img src="../img/Roxane_drawing/roxane_fanart3.jpg" alt="Image 2">
           <div class="icon">
             <div class="add-icon">
               <i class='bx bx-shopping-bag add-cart'></i>
@@ -129,7 +127,7 @@
       </div>
       <div class="image-container">
         <div style="position: relative;">
-          <img src="..\img\Roxane_drawing\roxane_fanart.jpg" alt="Image 3">
+          <img src="../img/Roxane_drawing/roxane_fanart2.jpg" alt="Image 3">
           <div class="icon">
             <div class="add-icon">
               <i class='bx bx-shopping-bag add-cart'></i>
@@ -144,7 +142,7 @@
       </div>
       <div class="image-container">
         <div style="position: relative;">
-          <img src="..\img\Roxane_drawing\roxane_dessin.jpg" alt="Image 4">
+          <img src="../img/Roxane_drawing/roxane_dessin.jpg" alt="Image 4">
           <div class="icon">
             <div class="add-icon">
               <i class='bx bx-shopping-bag add-cart'></i>
@@ -159,7 +157,7 @@
       </div>
       <div class="image-container">
         <div style="position: relative;">
-          <img src="..\img\Yoke_drawing\yoke_drawing_1.png" alt="Image 5">
+          <img src="../img/Yoke_drawing/yoke_drawing_painting.png" alt="Image 5">
           <div class="icon">
             <div class="add-icon">
               <i class='bx bx-shopping-bag add-cart'></i>
@@ -172,7 +170,84 @@
         <h2 class="title-drawing">Drawing 5.</h2>
         <span class ="price">2€</span>
       </div>
+      <div class="image-container">
+        <div style="position: relative;">
+          <img src="../img/Yoke_drawing/yoke_drawing_traditional.jpg" alt="Image 6">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
+        <h2 class="title-drawing">Drawing 6.</h2>
+        <span class ="price">2€</span>
+      </div>
+      <div class="image-container">
+        <div style="position: relative;">
+          <img src="../img/Yoke_drawing/yoke_drawing_traditional1.jpg" alt="Image 5">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
+        <h2 class="title-drawing">Drawing 7.</h2>
+        <span class ="price">2€</span>
+      </div>
+      <div class="image-container">
+        <div style="position: relative;">
+          <img src="../img/Yoke_drawing/yoke_drawing_painting1.jpg" alt="Image 5">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
+        <h2 class="title-drawing">Drawing 8.</h2>
+        <span class ="price">2€</span>
+      </div>
+      <div class="image-container">
+        <div style="position: relative;">
+          <img src="../img/Yoke_drawing/yoke_drawing_painting.jpg" alt="Image 5">
+          <div class="icon">
+            <div class="add-icon">
+              <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class ="show-icon">
+              <i class='bx bx-show show'></i>
+            </div>
+          </div>
+        </div>
+        <h2 class="title-drawing">Drawing 9.</h2>
+        <span class ="price">2€</span>
+      </div>
     </section>
+
+
+    <h2 class="orders">See my orders</h2>
+    <div class="order_table_div">
+      <table id="order_table" style = "width:1400px">
+        <thead class="order_table_thead">
+            <tr>
+            <th>Drawing</th>
+            <th>total</th>
+            <th>Name</th>
+            <th>Firstname</th>
+            <th>Email</th>
+            <th>Tel</th>
+            </tr>
+        </thead>
+      </table>
+    </div>
 
         <script>
           // Get all images in the table
@@ -186,6 +261,15 @@
             if (img.src.includes('yoke')){
               img.classList.add('yoke');
               img.classList.add("drawing");
+            }
+            if (img.src.includes('fanart')){
+                img.classList.add('fanart');
+            }
+            if (img.src.includes('painting')){
+                img.classList.add('painting');
+            }
+            if (img.src.includes('traditional')){
+                img.classList.add('traditional');
             }
           });
 
@@ -206,38 +290,19 @@
         }
 
 
-
-
         const showIcons = document.querySelectorAll('.show-icon');
 
         showIcons.forEach(icon => {
           icon.addEventListener('click', event => {
             const imgContainer = event.target.closest('.image-container');
             const imgSrc = imgContainer.querySelector('img').src;
-            const bigImg = document.createElement('img');
-            bigImg.src = imgSrc;
-            bigImg.classList.add('big-image');
-
-            const closeIcon = document.createElement('i');
-            closeIcon.classList.add('bx', 'bx-x', 'close-icon');
-
-            const imgWrapper = document.createElement('div');
-            imgWrapper.classList.add('img-wrapper');
-            imgWrapper.appendChild(bigImg);
-            imgWrapper.appendChild(closeIcon);
-            document.body.appendChild(imgWrapper);
-
-            closeIcon.addEventListener('click', () => {
-              imgWrapper.remove();
-            });
+            window.open(imgSrc, '_blank');
           });
         });
 
 
-
-
         </script>
-            <script src="..\js\organisation_table.js"></script>
+            <script src="../js/shop.js"></script>
 
 
             <footer class="footer">
@@ -250,17 +315,24 @@
                 </div>
                 <div class="footer_nav">
                   <ul>
-                    <li><a href="..\html\home.html">Home</a></li>
-                    <li><a href="..\html\Shop.html">Shop</a></li>
-                    <li><a href="..\html\Commissions.html">Commissions</a></li>
-                    <li><a href="..\html\Contact.html">Contact</a></li>
-                    <li><a href="..\html\About.html">About Us</a></li>
+                    <li><a href="../html/home.html">Home</a></li>
+                    <li><a href="../html/Shop.html">Shop</a></li>
+                    <li><a href="../html/Commissions.html">Commissions</a></li>
+                    <li><a href="../html/Contact.html">Contact</a></li>
+                    <li><a href="../html/About.html">About Us</a></li>
                     
                   </ul>
                 </div>
               </div>
               <div class="footer-bottom">
                 <p>Copyright &copy;2023; Designed by <span class="designed_by">Yoke NGASSA & Roxane BRACONNIER</span></p>
+                <p class="validation">
+                  <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                      src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                      alt="Valid CSS!" />
+                  </a>
+                </p>
               </div>
             </footer>
   </body>

@@ -1,0 +1,61 @@
+.about {
+  color: #A593E0;
+  text-align: left;
+  font-size: 40px;
+
+}
+
+.pres {
+  color: grey;
+  font-size: 30px;
+  justify-content: left;
+
+}
+
+.reason{
+  color: #A593E0;
+  text-align: right;
+  font-size: 40px;
+
+}
+
+.pres, .pres-reason{
+  padding: 10px;
+}
+
+.pres-reason {
+  color: grey;
+  font-size: 30px;
+  text-align: right;
+
+}
+
+.paragraphe{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.thanks {
+  position: relative;
+  font-size: 45px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #A593E0, #5a0286);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 14s infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  text-align: center;
+}
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+
+
+

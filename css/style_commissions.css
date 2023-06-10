@@ -127,34 +127,34 @@
     box-sizing: border-box;
     transition: transform 0.8s ease;
     transform: translateY(100%)
-  }
-  
-  .text_overlay .upper_title {
+    }
+
+.text_overlay .upper_title {
     text-align: center;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
     color:  rgba(0, 0, 0, 0.7);;
     font-weight: bold;
     font-size: 34px;
-  }
+}
 
-  .text_over_image {
+.text_over_image {
     background-color: white;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-  }
-  
-  
-  .text_over_image p {
+}
+
+
+.text_over_image p {
     margin: 5px 0;
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     color: black;
 
-  }
+}
 
-  .commission_button{
+.commission_button{
     border: 2px solid #A593E0;
     border-radius: 7px;
     background-color: #A593E0;
@@ -165,10 +165,10 @@
     line-height: 1;
     transition: 0.5s;
     position: relative;
-  }
+}
 
 
-  .commission_button:hover{
+.commission_button:hover{
     background-color: transparent;
     color: black;
     transform: scale(1.1);
@@ -177,8 +177,8 @@
 /* This is the button allowing the user to see more commissions so to see
 the history of old commissions that were already saved in the website*/
 #commissions_history_button{
-    margin-left: 738px;
-    margin-bottom: 50px;
+    display: block;
+    margin: 0 auto;
 }
 
 /* To give a greyish style to show that the "see more commissions" has already been
@@ -242,31 +242,31 @@ clicked and can't be anymore*/
 }
 
 .popup {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.8);
-    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1001;
     visibility: hidden;
-	opacity: 0;
-    
+    opacity: 0;
 }
 
 .popup.open {
     visibility: visible;
     opacity: 1;
-  }
+}
 
 .wrapper_popup {
-    margin: 105px 0 0 550px;
-	padding: 20px;
-	background: white;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 3s ease-in-out;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .wrapper_popup .closePopup {
@@ -340,9 +340,12 @@ textarea{
 /* ----------- TABLE OF COMMISSIONS */
 
 .commissions_table_div, .price_table_div{
-    width: 80%;
-    padding-left: 100px;
+    display: flex;
 
+}
+
+.commissions_table_div table, .price_table_div table{
+   margin: auto;
 }
 
 #commissions_table, #price_table{
@@ -380,38 +383,61 @@ td{
 
 
 /* --------- TABLE OF PRICE --------*/
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  #box_traditional{
+      font-weight: 900;
+      background-color: #FFDB58;
+      color:black;
+      border: 2px #FFDB58;
+  }
+  
+  #box_painting{
+      font-weight: 900;
+      background-color: #f16f6f;
+      color:black;
+      border: 2px #f16f6f;
+  }
+  
+  #box_sketch{
+      font-weight: 900;
+      background-color: #6fcaf1;
+      color:black;
+      border: 2px #6fcaf1;
+  }
+  
+  #box_lineart{
+      font-weight: 900;
+      background-color: #e1f27e;
+      color:black;
+      border: 2px #e1f27e;
+  }
+  
+  #box_fulldigi{
+      font-weight: 900;
+      background-color: #f1ce6f;
+      color:black;
+      border: 2px #f1ce6f;
+  }
 
-#box_traditional{
-    font-weight: 900;
-    background-color: #FFDB58;
-    color:black;
-    border: 2px #FFDB58;
-}
+  @media (max-width: 700px) {
+    .upper_commissions {
+      flex-direction: column;
+    }
+    #commissions_table th:nth-child(4), #commissions_table td:nth-child(4),
+    #commissions_table th:nth-child(6), #commissions_table td:nth-child(6) {
+      display: none;
+    }
 
-#box_painting{
-    font-weight: 900;
-    background-color: #f16f6f;
-    color:black;
-    border: 2px #f16f6f;
-}
-
-#box_sketch{
-    font-weight: 900;
-    background-color: #6fcaf1;
-    color:black;
-    border: 2px #6fcaf1;
-}
-
-#box_lineart{
-    font-weight: 900;
-    background-color: #e1f27e;
-    color:black;
-    border: 2px #e1f27e;
-}
-
-#box_fulldigi{
-    font-weight: 900;
-    background-color: #f1ce6f;
-    color:black;
-    border: 2px #f1ce6f;
-}
+    #price_table th {
+        font-size: 14px;
+      }
+    
+  }
+  
